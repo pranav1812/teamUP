@@ -1,10 +1,10 @@
 const jwt= require('jsonwebtoken')
 
 function authmdw(req, res, next){
-    console.log()
-    if(req.headers.Cookie) console.log(`jwt- cookie: ${req.headers.Cookie}`)
     
-    const token= req.headers.xauthtoken
+    if(req.headers.cookie) console.log(`jwt- cookie: ${req.headers.cookie}`)
+    
+    const token= req.headers.cookie.split('=')[1]
     if(! token) return res.status(401).send("Access denied! Auth token not found")
 
     try{
