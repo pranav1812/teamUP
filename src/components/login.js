@@ -15,7 +15,6 @@ class Login extends Component {
         this.setState({
             new_user: !this.state.new_user 
         })
-        alert(this.state.new_user);
     }
 
     show = () => {
@@ -27,23 +26,24 @@ class Login extends Component {
                 <h1 className="signup_title">SIGN UP</h1> 
                 <Form>
                     <Form.Group controlId="formBasicName">
-                        <Form.Label  className="signup_text" >Name</Form.Label>
+                        <Form.Label className="signup_text" >Name</Form.Label>
                         <Form.Control  type="name" placeholder="Enter Name" />
                     </Form.Group>
-                    <Form.Group controlId="formBasicPhone">
-                        <Form.Label  className="signup_text" >Mobile Number</Form.Label>
-                        <Form.Control  type="number" placeholder="Enter Mobile Number" />
+                    <Form.Group controlId="formBasicUserName">
+                        <Form.Label  className="signup_text" >User Name</Form.Label>
+                        <Form.Control  type="name" placeholder="Enter User Name" />
                     </Form.Group>
                     <Form.Group controlId="formBasicEmail">
                         <Form.Label  className="signup_text" >Email address</Form.Label>
                         <Form.Control  type="email" placeholder="Enter email" />
                     </Form.Group>
+                    <Form.Group controlId="formBasicPhone">
+                        <Form.Label  className="signup_text" >Mobile Number</Form.Label>
+                        <Form.Control  type="phone_number" placeholder="Enter Mobile Number" />
+                    </Form.Group>
                     <Form.Group controlId="formBasicPassword">
                         <Form.Label  className="signup_text">Password</Form.Label>
                         <Form.Control type="password" placeholder="Password" />
-                    </Form.Group>
-                    <Form.Group controlId="formBasicCheckbox">
-                        <Form.Check  className="signup_text" type="checkbox" label="Check me out" />
                     </Form.Group>
                     
                     <div className="row">
@@ -53,8 +53,8 @@ class Login extends Component {
                         <Button className="signup_button" type="button">
                             Cancel
                         </Button>
+                        <Form.Label  className="signup_text_link" >Already a user, <Button onClick={this.toggleState} className="signup_button" type="button">Log In</Button></Form.Label>
                     </div>
-                    <Form.Label  className="signup_text" >Already a user, <a>Sign In</a></Form.Label>
                 </Form>
             </div>
             )
@@ -86,8 +86,8 @@ class Login extends Component {
                         <Button onClick={this.toggleState} className="login_button" type="button">
                             Cancel
                         </Button>
+                        <Form.Label  className="login_text_link" >Already a user, <Button onClick={this.toggleState} className="signup_button" type="button">Sign In</Button></Form.Label>
                     </div>
-                    <Form.Label  className="login_text" >Not a User, <a>Sign Up</a></Form.Label>
                 </Form>
             </div>
             )
@@ -96,7 +96,9 @@ class Login extends Component {
     
     render() { 
         return ( 
-            {this.show()}
+            <div>
+                {this.show()}
+            </div>
          )
     }
 }

@@ -19,24 +19,24 @@ body {
     width: 100%;
     padding: 60px;
     height:auto;
-    margin: 100px 0px;
+    margin: 40px 0px;
     border-radius: 20px;
 }
 
-.login_title,.login_text,.text-muted {
+.login_title,.login_text,.text-muted,.signup_title,.signup_text,.edit_profile_text {
     color:#feffff;
 }
 
-.login_button {
+.login_button,.signup_button {
     background-color: #17252a;
     border: none;
-    padding: 10px 30px;
-    border-radius: 30px;
+    padding: 5px 20px;
+    border-radius: 20px;
     margin-right: 15px;
     margin-bottom: 10px;
 }
 
-.login_heading {
+.heading {
     padding-top: 40px;
     color: #17252a;
     text-align:center;
@@ -44,6 +44,15 @@ body {
     font-size: 60px;
 }
 
-.login_heading span {
+.heading span {
     color:#2b7a78;
+}
+
+.signup_text_link,.login_text_link {
+    padding-left: 0px;
+}
+
+.edit_profile {
+    background-image: linear-gradient(#17252a, #3aafa9,#17252a);
+    padding: 40px;
 }
