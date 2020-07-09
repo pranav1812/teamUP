@@ -1,6 +1,6 @@
 import React from 'react';
 import { Component } from 'react';
-import { Form } from 'react-bootstrap';
+import { Form,Button } from 'react-bootstrap';
 
 class EditProfile extends Component {
     state = {  }
@@ -49,6 +49,9 @@ class EditProfile extends Component {
                         <Form.Label className="edit_profile_text">Git-Hub profile</Form.Label>
                         <Form.Control as="input" />
                     </Form.Group>
+                    <Button onClick={this.toggleState} className="edit_profile_button" type="submit">
+                            Submit
+                    </Button>
                 </Form>
                 </div>
                 
