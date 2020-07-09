@@ -7,7 +7,7 @@ class Login extends Component {
     constructor(props) {
         super(props);
         this.state = { 
-            new_user: true
+            new_user: false
         };
     }
 
@@ -75,10 +75,6 @@ class Login extends Component {
                         <Form.Label  className="login_text">Password</Form.Label>
                         <Form.Control type="password" placeholder="Password" />
                     </Form.Group>
-                    <Form.Group controlId="formBasicCheckbox">
-                        <Form.Check  className="login_text" type="checkbox" label="Check me out" />
-                    </Form.Group>
-                    
                     <div className="row">
                         <Button className="login_button" type="submit">
                             Log In
@@ -86,7 +82,7 @@ class Login extends Component {
                         <Button onClick={this.toggleState} className="login_button" type="button">
                             Cancel
                         </Button>
-                        <Form.Label  className="login_text_link" >Already a user, <Button onClick={this.toggleState} className="signup_button" type="button">Sign In</Button></Form.Label>
+                        <Form.Label  className="login_text_link" >Already a user, <Button onClick={this.toggleState} className="signup_button" type="button">Sign Up</Button></Form.Label>
                     </div>
                 </Form>
             </div>
