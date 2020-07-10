@@ -6,15 +6,18 @@ class Login extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { 
+        this.state = {
             new_user: false
         };
     }
 
     toggleState = () => {
         this.setState({
-            new_user: !this.state.new_user 
+            new_user: !this.state.new_user
         })
+    }
+    nextpage = () => {
+        window.location= '/editprofile';
     }
 
     show = () => {
@@ -23,7 +26,7 @@ class Login extends Component {
         {
             return(
                 <div className="container">
-                <h1 className="signup_title">SIGN UP</h1> 
+                <h1 className="signup_title">SIGN UP</h1>
                 <Form>
                     <Form.Group controlId="formBasicName">
                         <Form.Label className="signup_text" >Name</Form.Label>
@@ -45,12 +48,12 @@ class Login extends Component {
                         <Form.Label  className="signup_text">Password</Form.Label>
                         <Form.Control type="password" placeholder="Password" />
                     </Form.Group>
-                    
+
                     <div className="row">
-                        <Button className="signup_button" type="submit">
-                            Log In
+                        <Button onClick={this.nextpage} className="signup_button" type="submit">
+                            Sign Up
                         </Button>
-                        <Button className="signup_button" type="button">
+                        <Button onClick={this.nextpage} className="signup_button" type="button">
                             Cancel
                         </Button>
                         <Form.Label  className="signup_text_link" >Already a user, <Button onClick={this.toggleState} className="signup_button" type="button">Log In</Button></Form.Label>
@@ -58,13 +61,13 @@ class Login extends Component {
                 </Form>
             </div>
             )
-            
+
         }
-        else 
+        else
         {
             return(
                 <div className="container">
-                <h1 className="login_title">LOG IN</h1> 
+                <h1 className="login_title">LOG IN</h1>
                 <Form>
                     <Form.Group controlId="formBasicEmail">
                         <Form.Label  className="login_text" >Email address</Form.Label>
@@ -89,14 +92,14 @@ class Login extends Component {
             )
         }
     }
-    
-    render() { 
-        return ( 
+
+    render() {
+        return (
             <div>
                 {this.show()}
             </div>
          )
     }
 }
- 
+
 export default Login;

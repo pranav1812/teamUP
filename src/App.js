@@ -20,9 +20,8 @@ function App() {
           </div>
         </div>
       </div>
-      <EditProfile />
     </div>
-    
+
   );
 }
 

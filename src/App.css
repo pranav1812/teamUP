@@ -61,6 +61,7 @@ body {
 .edit_profile {
     background-image: linear-gradient(#17252a, #3aafa9,#17252a);
     padding: 40px;
+    margin-bottom: 40px;
 }
 
 .edit_profile_button {
