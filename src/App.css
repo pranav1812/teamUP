@@ -72,3 +72,44 @@ body {
     border-radius: 20px;
     margin-bottom: 10px;
 }
+
+/*----------Navigation Bar----------*/
+
+.navigation_bar {
+    background-color: #17252a;
+}
+
+.navbar_title {
+    color: #def2f1;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+}
+
+.navbar_title span {
+    color: #3aafa9;
+}
+
+.navbar_toggler_icon {
+    background-color: #def2f1;
+}
+
+.navbar_text {
+    color: #def2f1;
+    padding-right: 30px;
+}
+
+.navbar_text:hover, {
+    color:#3aafa9;
+}
+
+.navbar_button {
+    background-color: #3aafa9;
+    color:#17252a;
+    font-weight: bold;
+    border:none;
+}
+
+.navbar_button:hover {
+    background-color: #def2f1;
+    color:#2b7a78
+}
