@@ -1,5 +1,6 @@
 const jwt= require('jsonwebtoken')
 
+// middleware function to check the current user
 function authmdw(req, res, next){
     
     if(req.headers.cookie) console.log(`jwt- cookie: ${req.headers.cookie}`)
