@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
-import { Card, Button } from 'react-bootstrap';
+import {Card,Button} from 'react-bootstrap';
 
-class FindTile extends Component {
-    state = { 
-
-     }
-    
+class Comp_Card extends Component {
+    state = {  }
     render() { 
         return ( 
             <div>
@@ -22,10 +19,9 @@ class FindTile extends Component {
                         </Card.Body>
                     </Card>
                 </div>
-            
-            </div>   
+            </div>
          );
     }
 }
  
-export default FindTile;
+export default Comp_Card;

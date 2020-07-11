@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
-import { Card, Button } from 'react-bootstrap';
+import {Card,Button} from 'react-bootstrap';
 
-class FindTile extends Component {
-    state = { 
-
-     }
-    
+class Idea_Card extends Component {
+    state = {  }
     render() { 
         return ( 
             <div>
@@ -18,14 +15,13 @@ class FindTile extends Component {
                             Some quick example text to build on the card title and make up the bulk of
                             the card's content.
                             </Card.Text>
-                            <Button className="home_find_button">View Full Profile</Button>
+                            <Button className="home_find_button">View Full Idea</Button>
                         </Card.Body>
                     </Card>
                 </div>
-            
-            </div>   
+            </div>
          );
     }
 }
  
-export default FindTile;
+export default Idea_Card;

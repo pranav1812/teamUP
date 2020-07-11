@@ -12,35 +12,44 @@ class Find extends Component {
                 <FindNav />
                 <div className="container find">
                     <div className="row">
-                        <div className="col-12 col-sm-4">
+                        <div className="col-12 col-md-3">
                             <FindTile />
                         </div>
-                        <div className="col-12 col-sm-4">
+                        <div className="col-12 col-md-3">
                             <FindTile />
                         </div>
-                        <div className="col-12 col-sm-4">
+                        <div className="col-12 col-md-3">
                             <FindTile />
                         </div>
-                    </div>
-                    <div className="row">
-                        <div className="col-12 col-sm-4">
-                            <FindTile />
-                        </div>
-                        <div className="col-12 col-sm-4">
-                            <FindTile />
-                        </div>
-                        <div className="col-12 col-sm-4">
+                        <div className="col-12 col-md-3">
                             <FindTile />
                         </div>
                     </div>
                     <div className="row">
-                        <div className="col-12 col-sm-4">
+                        <div className="col-12 col-md-3">
                             <FindTile />
                         </div>
-                        <div className="col-12 col-sm-4">
+                        <div className="col-12 col-md-3">
                             <FindTile />
                         </div>
-                        <div className="col-12 col-sm-4">
+                        <div className="col-12 col-md-3">
+                            <FindTile />
+                        </div>
+                        <div className="col-12 col-md-3">
+                            <FindTile />
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col-12 col-md-3">
+                            <FindTile />
+                        </div>
+                        <div className="col-12 col-md-3">
+                            <FindTile />
+                        </div>
+                        <div className="col-12 col-md-3">
+                            <FindTile />
+                        </div>
+                        <div className="col-12 col-md-3">
                             <FindTile />
                         </div>
                     </div>
