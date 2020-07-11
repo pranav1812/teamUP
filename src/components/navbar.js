@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Navbar,Nav,Form,FormControl,Button } from 'react-bootstrap';
+import { Navbar,Nav,Form,FormControl,Button,DropdownButton,Dropdown } from 'react-bootstrap';
 
 class NavigationBar extends Component {
     state = {  }
@@ -18,8 +18,13 @@ class NavigationBar extends Component {
                             <Nav.Link href="#"><h6 className="navbar_text">DISCUSSION FORUM</h6></Nav.Link>
                         </Nav>
                         <Form inline>
-                        <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                        <Button className="navbar_button" variant="outline-success">Search</Button>
+                            <DropdownButton id="dropdown-item-button" title="+">
+                                <Dropdown.Item as="button">Action</Dropdown.Item>
+                                <Dropdown.Item as="button">Another action</Dropdown.Item>
+                                <Dropdown.Item as="button">Something else</Dropdown.Item>
+                            </DropdownButton>
+                            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+                            <Button className="navbar_button" variant="outline-success">Search</Button>
                         </Form>
                     </Navbar.Collapse>
                 </Navbar>
