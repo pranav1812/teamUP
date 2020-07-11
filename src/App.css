@@ -275,7 +275,7 @@ body {
     text-align: center;
 }
 
-.heading_competition {
+.heading_competition,.idea_heading {
     margin-top: 40px;
     margin-bottom: 40px;
 }
@@ -304,6 +304,41 @@ body {
         padding: 20px 0px;
     }
     .heading_competition img {
+        width: 70%;
+    }
+}
+
+/*--------------------------*/
+
+.idea_heading {
+    font-size: 60px;
+    letter-spacing: 0.1rem;
+    padding-top: 70px;
+    font-weight: bold;
+    color: #17252a;
+}
+
+.idea_heading span {
+    color: #3aafa9;
+}
+
+.idea img {
+    width:40%;
+}
+
+.idea {
+    padding: 50px 0px;
+}
+
+@media (max-width:576px)
+{
+    .idea_heading {
+        font-size: 35px;
+        letter-spacing: 0.1rem;
+        padding: 20px 0px;
+        padding-left:15px;
+    }
+    .idea img {
         width: 70%;
     }
 }
