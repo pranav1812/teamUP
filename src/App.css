@@ -98,7 +98,7 @@ body {
     padding-right: 30px;
 }
 
-.navbar_text:hover, {
+.navbar_text:hover {
     color:#3aafa9;
 }
 
@@ -112,4 +112,125 @@ body {
 .navbar_button:hover {
     background-color: #def2f1;
     color:#2b7a78
+}
+
+/*------homePage---------*/
+
+.home {
+    background: linear-gradient(#def2f1,#17252a);
+    display: grid;
+    padding: 10px;
+    grid-template-columns: 1fr;
+}
+
+.grid1 {
+    height: 700px;
+}
+
+.grid2 {
+    height: 340px;
+}
+
+.grid3 {
+    height: 340px;
+}
+
+.grid4 {
+    height: 340px;
+}
+
+
+.home_card {
+    background-color: #3aafa9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 10px;
+    overflow: auto;
+}
+
+.home_card::-webkit-scrollbar {
+    display: none;
+  }
+
+.card_heading {
+    color: #17252a;
+    padding:10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.card_heading_btn {
+    background-color:#17252a;
+    border:none;
+    color: #def2f1;
+    font-size:15px;
+    font-weight: bolder;
+    border-radius:50%;
+}
+
+@media (min-width:800px)
+{
+    .home {
+        display: grid;
+        padding: 20px;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    
+    .grid1 {
+        grid-row: 1 / span 3;
+        grid-column: 1;
+        height: 700px;
+    }
+    
+    .grid2 {
+        grid-column: 2;
+        grid-row: 1;
+        height: 340px;
+    }
+    
+    .grid3 {
+        grid-column: 3;
+        grid-row: 1;
+        height: 340px;
+    }
+    
+    .grid4 {
+        grid-column: 2 / span 2;
+        grid-row: 2;
+        height: 340px;
+    }
+
+}
+
+/*-----------------------*/
+
+.tile_home_todo {
+    background-color: #def2f1;
+    min-height: 50px;
+    margin:3px 6px;
+    border-radius: 5px;
+}
+
+.tile_home_button,.home_find_button {
+    background-color: #17252a;
+    color:#def2f1;
+    border: none;
+    border-radius:5px;
+}
+
+.X {
+    border-radius: 50%;
+}
+
+/*-----------------------*/
+
+.home_tile_find {
+    padding:0px 10px;
+    margin-left: 27px;
+}
+
+.home_find_card {
+    width: 180px;
+    height: 260px;
+    margin:5px;
 }
