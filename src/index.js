@@ -6,6 +6,7 @@ import './index.css';
 import App from './App';
 import Home from './components/home';
 import EditProfile from './components/edit_profile';
+import Find from "./components/findpeople";
 //import App from './App.';
 
 ReactDOM.render(
@@ -13,6 +14,7 @@ ReactDOM.render(
     <Route path="/editprofile" component={EditProfile} exact/>
     <Route path="/" component={App} exact/>
     <Route path="/home" component={Home} exact/>
+    <Route path="/findpeople" component={Find} exact/>
   </Router>,
   document.getElementById('root')
 );
