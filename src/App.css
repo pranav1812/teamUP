@@ -234,3 +234,26 @@ body {
     height: 260px;
     margin:5px;
 }
+
+/*------------------*/
+
+.find {
+    padding-top: 40px;
+}
+
+.find_tile {
+    margin: 20px;
+}
+
+.find_card {
+    height: 300px;
+    border:3px solid #17252a;
+    border-radius: 20px;
+}
+
+#dropdown-item-button {
+    background-color: #17252a;
+    margin:2px 30px;
+    border:none;
+    padding: 2px 30px;
+}
