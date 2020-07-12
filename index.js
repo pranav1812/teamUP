@@ -6,6 +6,8 @@ const auth= require('./routes/auth')
 
 // using todo here for testing purpose.... will be shifted to dashboard
 const todo= require('./routes/todo')
+const discussion= require('./routes/discussion')
+const idea= require('./routes/idea')
 
 const app= express()
 
@@ -20,5 +22,7 @@ mongoose.connect(mongoConnection,{useNewUrlParser: true, useUnifiedTopology: tru
 app.use('/register', register)
 app.use('/auth', auth)
 app.use('/todo', todo)
+app.use('/discussion', discussion)
+app.use('/idea', idea)
 
-app.listen(8000)
+app.listen(8001)

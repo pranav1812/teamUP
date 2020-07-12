@@ -100,9 +100,87 @@ const groupTodoSchema= mongoose.Schema({
     project_id: String
 })
 
+// messageSchema
+const messageSchema= mongoose.Schema({
+    sender: String,
+    senderUid: String,
+    message: {
+        type: String,
+        required: true
+    }
+},{timestamp: true})
+
+// discussion schema
+const discussionSchema= mongoose.Schema({
+    title:{
+        required: true,
+        type: String
+    },
+    initiator: String,
+    initiatorUid: String,
+    brief:{
+        type: String,
+        required: true
+    },
+    upvotes: {
+        type: Number,
+        default: 0
+    },
+    downvotes: {
+        type: Number,
+        default: 0
+    },
+    discussion:[messageSchema]
+})
+
+// idea schema
+const ideaSchema= mongoose.Schema({
+    initiator: String,
+    initiatorUid: String,
+    title: {
+        type: String,
+        required: true
+    },
+    brief: {
+        type: String,
+        required: true
+    },
+    status: {
+        type: String,
+        default: "not started"
+    },
+    upvotes: {
+        type: Number,
+        default: 0
+    },
+})
+
+// competitionSchema
+const competitionSchema= mongoose.Schema({
+    title: {
+        type: String,
+        required: true
+    },
+    from: {
+        type: String,
+        required: true
+    },
+    to: {
+        type: String,
+        required: true
+    },
+    link: {
+        type: String,
+        required: true
+    }
+})
+
 module.exports={
     userSchema: userSchema,
     projectSchema: projectSchema,
     personalTodoSchema: personalTodoSchema,
-    groupTodoSchema: groupTodoSchema
+    groupTodoSchema: groupTodoSchema,
+    discussionSchema: discussionSchema,
+    ideaSchema: ideaSchema,
+    competitionSchema: competitionSchema
 }

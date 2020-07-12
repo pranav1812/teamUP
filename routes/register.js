@@ -52,10 +52,6 @@ register.put('/update_profile', async (req, res)=>{
 })
 
 
-
-
-
-
 /* -----------------------will be shifted to a separate folder ----------------- */
 
 const userVal= joi.object().keys(
