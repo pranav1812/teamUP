@@ -38,6 +38,24 @@ register.post('/create', validateRegisterUserReq, async(req, res)=>{
     }
 })
 
+register.put('/update_profile', async (req, res)=>{
+    try{
+        var usr= await User.findOne({_id: req.body.uid}).exec()
+        if(! usr) return res.status(400).send("user not found")
+        usr.set(req.body)
+        var updatedUser= await usr.save()
+        res.send(`updated user looks like ${updatedUser}`)
+    }
+    catch(err){
+        console.error(err)
+    }
+})
+
+
+
+
+
+
 /* -----------------------will be shifted to a separate folder ----------------- */
 
 const userVal= joi.object().keys(

@@ -4,6 +4,9 @@ const mongoose= require('mongoose')
 const register= require('./routes/register')
 const auth= require('./routes/auth')
 
+// using todo here for testing purpose.... will be shifted to dashboard
+const todo= require('./routes/todo')
+
 const app= express()
 
 app.use(bodyParser.json())
@@ -16,5 +19,6 @@ mongoose.connect(mongoConnection,{useNewUrlParser: true, useUnifiedTopology: tru
 
 app.use('/register', register)
 app.use('/auth', auth)
+app.use('/todo', todo)
 
 app.listen(8000)
