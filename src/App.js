@@ -2,7 +2,6 @@ import React from 'react';
 import './App.css';
 import Login from './components/login'
 import LoginImg from './images/login.svg';
-import EditProfile from './components/edit_profile'
 
 function App() {
   return (

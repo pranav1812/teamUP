@@ -135,14 +135,17 @@ body {
 
 .grid2 {
     height: 340px;
+    padding-bottom: 20px;
 }
 
 .grid3 {
     height: 340px;
+    padding-bottom: 20px;
 }
 
 .grid4 {
     height: 340px;
+    padding-bottom: 20px;
 }
 
 
@@ -172,6 +175,15 @@ body {
     font-size:15px;
     font-weight: bolder;
     border-radius:50%;
+}
+
+.card_heading_btn_prj {
+    background-color:#17252a;
+    border:none;
+    color: #def2f1;
+    font-size:15px;
+    font-weight: bolder;
+    border-radius: 20px;
 }
 
 @media (min-width:800px)
@@ -238,7 +250,7 @@ body {
 
 .home_find_card {
     width: 180px;
-    height: 260px;
+    height: 270px;
     margin:5px;
     background-color: #def2f1;
 }
@@ -341,5 +353,57 @@ body {
     .idea img {
         width: 70%;
     }
+}
+
+/*---------home profile---------------*/
+
+.profile {
+    text-align: center;
+    padding:20px;
+}
+
+.profile_img {
+    border-radius: 50%;
+    margin-bottom: 30px;
+}
+
+.profile_text {
+    color: #17252a
+}
+
+.profile_text h3 {
+    color:#def2f1;
+}
+
+/*-------------------------------*/
+
+.projects_card {
+    background-color: #def2f1;
+    width: 200px;
+    margin: 10px;
+}
+
+.grid4 {
+    padding:0px 50px;
+}
+
+/*--------Project-----------------*/
+
+.project_heading {
+    text-align:center;
+    color: #17252a;
+    padding-top: 30px;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.project_card {
+    height:550px;
+    background-color: #3aafa9;
+    border-radius: 50px;
+}
+
+.project {
+    padding:20px;
 }
 

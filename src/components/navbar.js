@@ -16,6 +16,7 @@ class NavigationBar extends Component {
                             <Nav.Link href="#"><h6 className="navbar_text">IDEAS</h6></Nav.Link>
                             <Nav.Link href="#"><h6 className="navbar_text">COMPETITIONS</h6></Nav.Link>
                             <Nav.Link href="#"><h6 className="navbar_text">DISCUSSION FORUM</h6></Nav.Link>
+                            <Nav.Link href="#"><h6 className="navbar_text">ABOUT US</h6></Nav.Link>
                         </Nav>
                         <Form inline>
                             <DropdownButton id="dropdown-item-button" title="+">
