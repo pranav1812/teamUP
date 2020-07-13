@@ -1,28 +1,39 @@
-const express= require('express')
-const bodyParser= require('body-parser')
-const mongoose= require('mongoose')
-const register= require('./routes/register')
-const auth= require('./routes/auth')
+const express = require('express');
+const cors = require('cors');
+const bodyParser = require('body-parser');
+const morgan = require('morgan');
 
-// using todo here for testing purpose.... will be shifted to dashboard
-const todo= require('./routes/todo')
-const discussion= require('./routes/discussion')
-const idea= require('./routes/idea')
+const messages = require('./db/messages');
 
-const app= express()
+const app = express();
 
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({extended:true}))
+app.use(morgan('tiny'));
+app.use(cors());
+app.use(bodyParser.json());
 
-mongoConnection= 'mongodb://localhost/teamUp'
-mongoose.connect(mongoConnection,{useNewUrlParser: true, useUnifiedTopology: true})
-    .then(()=>console.log(`connected to ${mongoConnection}`))
-    .catch(err=>console.log(`could not connect to DB ${err}`))
+app.get('/', (req, res) => {
+    res.json({
+        message: 'njalvnfuvna.....random string....'
+    });
+});
 
-app.use('/register', register)
-app.use('/auth', auth)
-app.use('/todo', todo)
-app.use('/discussion', discussion)
-app.use('/idea', idea)
+app.get('/messages', (req,res)=> {
+    messages.getAll().then(messages => {
+        res.json(messages);
+    });
+});
 
-app.listen(8001)
+app.post('/messages' ,(req, res) =>{
+    console.log(req.body);
+    messages.create(req.body).then((message)=> {
+        res.json(message);
+    }).catch((error)=> {
+        res.status(500);
+        res.json(error);
+    });
+});
+
+const port = process.env.PORT || 1231;
+app.listen(port ,() =>{
+    console.log('listening on ${port}');
+});
