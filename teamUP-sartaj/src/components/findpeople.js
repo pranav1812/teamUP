@@ -39,8 +39,10 @@ class Find extends Component {
                 <FindNav />
                 <div className="container find">
                     <div className="row">
+
                         {this.peopl()}
                 </div>
+
                 </div>
                 <Footer />
             </div>
