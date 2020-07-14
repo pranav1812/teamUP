@@ -20,7 +20,8 @@ class Home extends Component {
     this.state = {
       show:false,
       todo: "" ,
-      todolists: []
+      todolists: [],
+      peoples: []
      }
   }
 
@@ -33,6 +34,17 @@ class Home extends Component {
     this.setState({
       todo: e.target.value
     })
+  }
+  componentDidMount(){
+    axios.get('http://localhost:8000/register/getprof')
+    .then(response => {
+      console.log(response.data.profs)
+    this.setState({ peoples: response.data.profs })
+
+  })
+  .catch((error) => {
+    console.log(error);
+  })
   }
   onSubmit(e){
     e.preventDefault();
@@ -57,6 +69,12 @@ class Home extends Component {
 
   }
 
+  peopl(){
+    return this.state.peoples.map(people => {
+      return <TileFindHome people={people}/>
+    })
+  }
+
   /*todolis(tods){
     if(tods!=null){
     return tods.map((tod) => {
@@ -78,7 +96,7 @@ class Home extends Component {
                     <div className="home_card grid1">
                     <div className="row mr-0">
                             <h4 className="card_heading col-10">PROFILE</h4>
-                            {/*<button className="card_heading_btn col-1 m-2"><MdModeEdit /></button>*/}
+
                             <i className="todo_btn"><MdModeEdit /></i>
                         </div>
                         <Profile />
@@ -88,20 +106,16 @@ class Home extends Component {
                         <div className="row">
                           <form className="col-11" onSubmit={this.onSubmit}>
                           <input className="inputtodo" type="text" placeholder="ADD TASK" value={this.state.todo} onChange={this.onChangeTodo} />
-                          {/*<button className="card_heading_btn col-1 m-2" type="submit">+</button>*/}
+
                           <i className="todo_btn"><FaPlusCircle /></i>
+
                           </form>
                           </div>
                     </div>
                     <div className="home_card grid3">
                         <h4 className="card_heading">FIND PEOPLE</h4>
                         <div className="row">
-                            <TileFindHome />
-                            <TileFindHome />
-                            <TileFindHome />
-                            <TileFindHome />
-                            <TileFindHome />
-                            <TileFindHome />
+                            {this.peopl()}
                         </div>
                     </div>
                     <div className="home_card grid4">
