@@ -5,9 +5,8 @@ class Projects_Card extends Component {
     state = {  }
     render() { 
         return ( 
-            <div>
-                <div>
-                    <Card className="projects_card">
+                <div className="projects_card">
+                    <Card>
                         <Card.Body>
                             <Card.Title>Card Title</Card.Title>
                             <Card.Text>
@@ -17,8 +16,7 @@ class Projects_Card extends Component {
                             <Button className="home_find_button">View Full Profile</Button>
                         </Card.Body>
                     </Card>
-                </div>
-            </div>   
+                </div> 
          );
     }
 }

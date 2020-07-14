@@ -5,6 +5,8 @@ import TileFindHome from './tilehomeFind';
 import Profile from './profile_home'
 import { MdModeEdit } from 'react-icons/md';
 import Projects_Card from './ongoing_projects_card';
+import {FaPlusCircle} from 'react-icons/fa';
+import Footer from './footer';
 import axios from 'axios';
 
 class Home extends Component {
@@ -85,21 +87,21 @@ class Home extends Component {
                     <div className="home_card grid1">
                     <div className="row mr-0">
                             <h4 className="card_heading col-10">PROFILE</h4>
-                            <button className="card_heading_btn col-1 m-2"><MdModeEdit /></button>
+                            {/*<button className="card_heading_btn col-1 m-2"><MdModeEdit /></button>*/}
+                            <i className="todo_btn"><MdModeEdit /></i>
                         </div>
                         <Profile />
                     </div>
                     <div className="home_card grid2">
-                        <div className="row mr-0">
-                            <h4 className="card_heading col-10">TO-DO LIST</h4>
-
-
-                        </div>
-                        <form onSubmit={this.onSubmit}>
-                        <input className="inputtodo" type="text" placeholder="ADD TASK" value={this.state.todo} onChange={this.onChangeTodo} />
-                        <button className="card_heading_btn col-1 m-2" type="submit">+</button>
-                        </form>
-
+                        <h4 className="card_heading">TO-DO LIST</h4>
+                        <div className="row">
+                          <form className="col-11" onSubmit={this.onSubmit}>
+                          <input className="inputtodo" type="text" placeholder="ADD TASK" value={this.state.todo} onChange={this.onChangeTodo} />
+                          {/*<button className="card_heading_btn col-1 m-2" type="submit">+</button>*/}
+                          <i className="todo_btn"><FaPlusCircle /></i>
+                          {this.todolis(this.state.todolists)}
+                          </form>
+                          </div>
                     </div>
                     <div className="home_card grid3">
                         <h4 className="card_heading">FIND PEOPLE</h4>
@@ -110,7 +112,8 @@ class Home extends Component {
                     <div className="home_card grid4">
                     <div className="row mt-2">
                             <h4 className="card_heading col-10">PROJECTS WORKING ON</h4>
-                            <button className="card_heading_btn_prj col-1 mt-2 mb-2 ">+</button>
+                            {/*<button className="card_heading_btn_prj col-1 mt-2 mb-2 ">+</button>*/}
+                            <i className="todo_btn"><FaPlusCircle /></i>
                         </div>
                         <div className="row">
                             <Projects_Card />
@@ -120,6 +123,7 @@ class Home extends Component {
                         </div>
                     </div>
                 </div>
+                <Footer />
             </div>
          );
     }

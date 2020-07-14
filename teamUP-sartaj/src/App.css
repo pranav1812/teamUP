@@ -115,10 +115,23 @@ body {
     color:#2b7a78
 }
 
-#dropdown-item-button {
+.nav-icon {
     color:#def2f1;
-    font-weight: bolder;
-    font-size: 30px;
+    font-size: 20px;
+    padding-right:40px;
+}
+
+/*----------footer--------------*/
+
+footer {
+    background-color: #17252a;
+    color:#def2f1;
+    padding: 30px 0px;
+}
+
+footer i {
+    font-size: 40px;
+    padding: 0px 10px;
 }
 
 /*------homePage---------*/
@@ -223,6 +236,20 @@ body {
 
 /*-----------------------*/
 
+.inputtodo {
+    width: 80%;
+    margin-left: 5%;
+    border-radius: 5px;
+    border:none;
+    padding-left:20px;
+    color:#17252a;
+}
+
+.todo_btn {
+    font-size: 30px;
+    padding-left: 5%;
+}
+
 .tile_home_todo {
     background-color: #def2f1;
     min-height: 70px;
@@ -247,6 +274,14 @@ body {
 .home_tile_find {
     padding:0px 10px;
     margin-left: 27px;
+}
+
+@media (max-width:576px)
+{
+    .home_tile_find {
+        padding:0px 10px;
+        margin-left: 20%;
+    }
 }
 
 .home_find_card {
@@ -366,6 +401,7 @@ body {
 .profile_img {
     border-radius: 50%;
     margin-bottom: 30px;
+    width: 50%;
 }
 
 .profile_text {
@@ -381,7 +417,7 @@ body {
 .projects_card {
     background-color: #def2f1;
     width: 200px;
-    margin: 10px;
+    margin: 12px;
 }
 
 .grid4 {
