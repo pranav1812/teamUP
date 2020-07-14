@@ -33,7 +33,7 @@ class Discussion_Forum extends Component {
                                 </Modal.Header>
                                 <Modal.Body  className="modal_body">
                                     <div>
-                                        <div className="row">
+                                        <div className="row mb-2">
                                             <h6 className="col-3">Topic: </h6>
                                             <input placeholder="Topic"></input>
                                         </div>
