@@ -25,8 +25,7 @@ class Find extends Component {
                         <div className="col-12 col-md-3">
                             <FindTile />
                         </div>
-                    </div>
-                    <div className="row">
+                    
                         <div className="col-12 col-md-3">
                             <FindTile />
                         </div>
@@ -39,8 +38,6 @@ class Find extends Component {
                         <div className="col-12 col-md-3">
                             <FindTile />
                         </div>
-                    </div>
-                    <div className="row">
                         <div className="col-12 col-md-3">
                             <FindTile />
                         </div>

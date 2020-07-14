@@ -458,3 +458,40 @@ footer i {
     padding-right: 20px;
 }
 
+/*-----------Modal --------------*/
+
+.modal_header,.modal_footer {
+    background-color: #3aafa9;
+    color: #17252a;
+    font-weight: bold;
+}
+
+.close-modal-btn {
+    font-weight: bolder;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.modal_body {
+    background-color: ;
+}
+
+.modal_img {
+    height:120px;
+    width: 120px;
+    border-radius: 50%;
+    margin:20px;
+}
+
+.modal_btn {
+    background-color: #17252a;
+    border:none;
+    color: #def2f1;
+    border-radius: 20px;
+}
+
+.modal_btn:hover {
+    background-color: #def2f1;
+    color:#17252a;
+}
+
