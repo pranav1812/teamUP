@@ -3,62 +3,49 @@ import NavigationBar from './navbar';
 import FindTile from './find_tiles';
 import FindNav from './find_nav';
 import Footer from './footer';
+import axios from 'axios';
 
 class Find extends Component {
-    state = {  }
-    render() { 
-        return ( 
+    constructor(props){
+      super(props);
+      this.state = {
+        peoples: []
+
+       }
+    }
+
+    componentDidMount(){
+      axios.get('http://localhost:8000/register/getprof')
+      .then(response => {
+        console.log(response.data.profs)
+      this.setState({ peoples: response.data.profs })
+
+    })
+    .catch((error) => {
+      console.log(error);
+    })
+    }
+    peopl(){
+      return this.state.peoples.map(people => {
+        return <div className="col-12 col-md-3">
+        <FindTile people={people}/>
+        </div>
+      })
+    }
+    render() {
+        return (
             <div>
                 <NavigationBar />
                 <FindNav />
                 <div className="container find">
                     <div className="row">
-                        <div className="col-12 col-md-3">
-                            <FindTile />
-                        </div>
-                        <div className="col-12 col-md-3">
-                            <FindTile />
-                        </div>
-                        <div className="col-12 col-md-3">
-                            <FindTile />
-                        </div>
-                        <div className="col-12 col-md-3">
-                            <FindTile />
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="col-12 col-md-3">
-                            <FindTile />
-                        </div>
-                        <div className="col-12 col-md-3">
-                            <FindTile />
-                        </div>
-                        <div className="col-12 col-md-3">
-                            <FindTile />
-                        </div>
-                        <div className="col-12 col-md-3">
-                            <FindTile />
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="col-12 col-md-3">
-                            <FindTile />
-                        </div>
-                        <div className="col-12 col-md-3">
-                            <FindTile />
-                        </div>
-                        <div className="col-12 col-md-3">
-                            <FindTile />
-                        </div>
-                        <div className="col-12 col-md-3">
-                            <FindTile />
-                        </div>
-                    </div>
+                        {this.peopl()}
+                </div>
                 </div>
                 <Footer />
             </div>
          );
     }
 }
- 
+
 export default Find;
