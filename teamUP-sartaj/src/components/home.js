@@ -6,6 +6,7 @@ import Profile from './profile_home'
 import { MdModeEdit } from 'react-icons/md';
 import Projects_Card from './ongoing_projects_card';
 import {FaPlusCircle} from 'react-icons/fa';
+import {Modal,Button} from 'react-bootstrap';
 import Footer from './footer';
 import axios from 'axios';
 
@@ -14,12 +15,20 @@ class Home extends Component {
     super(props);
     this.onChangeTodo = this.onChangeTodo.bind(this);
     //this.todolis = this.todolis.bind(this);
+    this.handleModal = this.handleModal.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
     this.state = {
+      show:false,
       todo: "" ,
       todolists: []
      }
   }
+
+  handleModal()
+    {
+        this.setState({show:!this.state.show})
+    }
+
   onChangeTodo(e){
     this.setState({
       todo: e.target.value
@@ -81,7 +90,6 @@ class Home extends Component {
                           <input className="inputtodo" type="text" placeholder="ADD TASK" value={this.state.todo} onChange={this.onChangeTodo} />
                           {/*<button className="card_heading_btn col-1 m-2" type="submit">+</button>*/}
                           <i className="todo_btn"><FaPlusCircle /></i>
-                          {this.todolis(this.state.todolists)}
                           </form>
                           </div>
                     </div>
@@ -100,7 +108,57 @@ class Home extends Component {
                     <div className="row mt-2">
                             <h4 className="card_heading col-10">PROJECTS WORKING ON</h4>
                             {/*<button className="card_heading_btn_prj col-1 mt-2 mb-2 ">+</button>*/}
-                            <i className="todo_btn"><FaPlusCircle /></i>
+                            <i className="todo_btn"  onClick={this.handleModal}><FaPlusCircle /></i>
+                            <Modal show={this.state.show} onHide={()=>this.handleModal()}>
+                                <Modal.Header  className="modal_header">
+                                    <h2>Name</h2>
+                                    <span className="close-modal-btn" onClick={this.handleModal}>x</span>
+                                </Modal.Header>
+                                <Modal.Body  className="modal_body">
+                                    <div>
+                                        
+                                        <div className="row"> 
+                                            <h6 className="col-3">Name: </h6>
+                                            <p>ibIdvywvfj</p>
+                                        </div>
+                                        <div className="row"> 
+                                            <h6 className="col-3">User-Name: </h6>
+                                            <p>ibIdvywvfj</p>
+                                        </div>
+                                        <div className="row"> 
+                                            <h6 className="col-3">Branch: </h6>
+                                            <p>coe</p>
+                                        </div>
+                                        <div className="row"> 
+                                            <h6 className="col-3">Bio: </h6>
+                                            <p>lsnnnKKBFkbiBKNDoBBEEIK NEKB  oibwirg BFHAIV</p>
+                                        </div>
+                                        <div className="row"> 
+                                            <h6 className="col-3">Skills: </h6>
+                                            <p>lsnnnKKBFkbiBKNDoBBEEIK NEKB  oibwirg BFHAIV</p>
+                                        </div>
+                                        <div className="row"> 
+                                            <h6 className="col-3">Fields Interested: </h6>
+                                            <p>lsnnnKKBFkbiBKNDoBBEEIK NEKB  oibwirg BFHAIV</p>
+                                        </div>
+                                        <div className="row"> 
+                                            <h6 className="col-3">Git-Hub Link: </h6>
+                                            <p>lsnnnKKB</p>
+                                        </div>
+                                        <div className="row"> 
+                                            <h6 className="col-3">E-Mail: </h6>
+                                            <p>lsnnnKKB</p>
+                                        </div>
+                                        <div className="row"> 
+                                            <h6 className="col-3">Projects: </h6>
+                                        </div>
+                                    </div>
+                                </Modal.Body>
+                                <Modal.Footer className="modal_header">
+                                    <Button className="modal_btn" onClick={this.handleModal}>Chat</Button>
+                                    <Button className="modal_btn" onClick={this.handleModal}>Close</Button>
+                                </Modal.Footer>
+                            </Modal>
                         </div>
                         <div className="row">
                             <Projects_Card />
