@@ -13,7 +13,7 @@ class Home extends Component {
   constructor(props){
     super(props);
     this.onChangeTodo = this.onChangeTodo.bind(this);
-    this.todolis = this.todolis.bind(this);
+    //this.todolis = this.todolis.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
     this.state = {
       todo: "" ,
@@ -28,9 +28,9 @@ class Home extends Component {
   onSubmit(e){
     e.preventDefault();
     const work = {
-      task: this.state.todo
+      tasks: this.state.todo
     }
-    axios.post('http://localhost:8000/todo/personalToDo/create', work).then(res => {
+    axios.put('http://localhost:8000/todo/personalToDo/add', work).then(res => {
       console.log(res);
     }).catch(err => {
       console.log(err)
@@ -38,16 +38,17 @@ class Home extends Component {
 
     axios.get('http://localhost:8000/todo/getpersonaltodo').then(response => {
       this.setState({
-        todolists: response.data.tasks
+        todolists: response
       })
-      alert(this.state.todolists)
+      console.log(response)
+      alert(JSON.stringify(this.state.todolists))
     }).catch(err => {
       console.log(err)
     })
 
   }
 
-  todolis(tods){
+  /*todolis(tods){
     if(tods!=null){
     return tods.map((tod) => {
       return (
@@ -57,7 +58,8 @@ class Home extends Component {
       )
     });
   }
-  }
+  {this.todolis(this.state.todolists)}
+}*/
     render() {
         return (
             <div>
