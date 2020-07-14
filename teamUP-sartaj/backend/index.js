@@ -29,10 +29,17 @@ const mongoose= require('mongoose');
 const register= require('./routes/register');
 const auth= require('./routes/auth')
 
+const todo= require('./routes/todo')
+const discussion= require('./routes/discussion')
+const idea= require('./routes/idea')
+
 const app= express()
+const port = process.env.PORT || 8000;
 app.use(cors());
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({extended:true}))
+app.use(express.json());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:true}));
+app.use('/uploads', express.static('uploads'));
 
 const mongoConnection= "mongodb+srv://testowasp:04@10@2000@cluster0.vfkpf.mongodb.net/testowasp?retryWrites=true&w=majority";
 mongoose.connect(mongoConnection,{useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true, useFindAndModify: false })
@@ -41,5 +48,10 @@ mongoose.connect(mongoConnection,{useNewUrlParser: true, useCreateIndex: true, u
 //mongoose.set('useFindAndModify', false);
 app.use('/register', register)
 app.use('/auth', auth)
+app.use('/todo', todo)
+app.use('/discussion', discussion)
+app.use('/idea', idea)
 
-app.listen(8000);
+app.listen(port, () => {
+    console.log(`Server is running on port: ${port}`);
+  });

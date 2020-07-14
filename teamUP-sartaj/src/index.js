@@ -9,6 +9,7 @@ import EditProfile from './components/edit_profile';
 import Find from "./components/findpeople";
 import Idea from "./components/idea";
 import Competition from "./components/competition";
+import Project from "./components/project";
 //import App from './App.';
 
 ReactDOM.render(
@@ -19,6 +20,7 @@ ReactDOM.render(
     <Route path="/findpeople" component={Find} exact/>
     <Route path="/idea" component={Idea} exact/>
     <Route path="/competition" component={Competition} exact/>
+    <Route path="/project" component={Project} exact/>
   </Router>,
   document.getElementById('root')
 );

@@ -1,23 +1,41 @@
 import React, { Component } from 'react';
-import Profile_Img from '../images/test2.png' 
-
+import Profile_Img from '../images/test2.png'
+import axios from 'axios';
 class Profile extends Component {
-    state = {  }
-    render() { 
-        return ( 
+  constructor(props){
+    super(props);
+    this.state = {
+      profile: '',
+      profileImg: ''
+     }
+  }
+  componentDidMount(){
+    axios.get('http://localhost:8000/register/getprofile').then(response => {
+
+      this.setState({
+        profile: response.data.profile,
+        profileImg: response.data.profileImg
+      })
+      console.log(this.state.profileImg)
+    }).catch(err => {
+      console.log(err)
+    });
+  }
+
+    render() {
+        return (
             <div>
                 <div className="profile">
-                    <img className="profile_img" src={Profile_Img}></img>
+                    <img className="profile_img" src={this.state.profileImg} alt="abc" />
                     <div className="profile_text">
-                        <h2>COMPLETE NAME</h2>
-                        <h3>@username</h3>
-                        <h6>Description lorem jfwaoiwhwe l waeil wa wa ek kgegmg</h6>
+                        <h2>{this.state.profile.name}</h2>
+                        <h3>{this.state.profile.username}</h3>
+                        <h6>{this.state.profile.tellus}</h6>
                         <div className="row mt-5">
                             <div className="col-6 mt-4">
-                                <h6>Mobile No: 9786246692</h6>
-                                <h6>E-Mail: abc@thapar.edu</h6>
-                                <h6>Skills: App development, Web Development, Machine learning,
-                                    Block Chain,Internet of Things, Artificial Intelligence
+                                <h6>Mobile No: {this.state.profile.phone}</h6>
+                                <h6>E-Mail: {this.state.profile.mail}</h6>
+                                <h6>Skills: {this.state.profile.username}
                                 </h6>
                             </div>
                             <div className="col-6">
@@ -28,12 +46,12 @@ class Profile extends Component {
                                 <li>Project 1</li>
                             </div>
                         </div>
-                            
+
                     </div>
                 </div>
             </div>
          );
     }
 }
- 
+
 export default Profile;

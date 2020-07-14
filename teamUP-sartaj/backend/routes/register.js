@@ -181,17 +181,17 @@ var upload = multer({
 // User model
 //let Legendupload = require('../models/legendupload.model');
 //var idimage;
-register.put('/user-profile', upload.single('profileImg'), authmdw , (req, res, next) => {
+register.put('/user-profile', upload.single('profileImg'), (req, res, next) => {
   console.log("profile is listening")
     const url = req.protocol + '://' + req.get('host');
     //idimage = new mongoose.Types.ObjectId();
-    console.log(req.user._id)
-    User.findByIdAndUpdate(req.user._id ,
+    console.log(req.body.intfeilds)
+    User.findByIdAndUpdate( "5f094de7c30b346650d86cc0" ,
     {
       skills: req.body.skills,
-      githubprofile: req.body.githubprofile,
+      githubprofile: req.body.github,
       tellus: req.body.tellus,
-      interestedfeilds: req.body.interestedfeilds,
+      interestedfeilds: req.body.intfeilds,
       branch: req.body.branch,
       profileImg: url + '/uploads/' + req.file.filename
     },function(err, result){
@@ -255,11 +255,11 @@ register.put('/user-profile', upload.single('profileImg'), authmdw , (req, res, 
 //});
 
 
-register.get("/", (req, res, next) => {
-    User.find().then(data => {
+register.get("/getprofile", (req, res, next) => {
+    User.findOne({_id: "5f094de7c30b346650d86cc0"}).then(data => {
         res.status(200).json({
-            message: "User list retrieved successfully!",
-            profileuploads: data
+            profile: data,
+            profileImg: data.profileImg
         });
     });
 });

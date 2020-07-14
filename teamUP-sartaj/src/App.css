@@ -77,6 +77,7 @@ body {
 
 .navigation_bar {
     background-color: #17252a;
+    z-index: 100;
 }
 
 .navbar_title {
@@ -224,8 +225,8 @@ body {
 
 .tile_home_todo {
     background-color: #def2f1;
-    min-height: 50px;
-    margin:3px 6px;
+    min-height: 70px;
+    margin:5px 6px;
     border-radius: 5px;
 }
 
@@ -385,5 +386,39 @@ body {
 
 .grid4 {
     padding:0px 50px;
+}
+
+/*--------Project-----------------*/
+
+.project_heading {
+    text-align:center;
+    color: #17252a;
+    padding-top: 10px;
+    font-weight: bold;
+    font-size: 40px;
+    padding-bottom: 20px;
+}
+
+.project_card {
+    height:600px;
+    background-color: #3aafa9;
+    border-radius: 30px;
+    overflow: auto;
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+    padding:20px 0px;
+}
+
+.project_card::-webkit-scrollbar {
+    display: none;
+  }
+
+.project {
+    padding:20px;
+}
+
+.project_info {
+    padding-left:20px;
+    padding-right: 20px;
 }
 

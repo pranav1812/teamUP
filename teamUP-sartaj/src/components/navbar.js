@@ -12,12 +12,12 @@ class NavigationBar extends Component {
                     <Navbar.Toggle className="navbar_toggler_icon" aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse  id="basic-navbar-nav">
                         <Nav className="mr-auto">
-                            <Nav.Link href="#home"><h6 className="navbar_text"><Link to="/home">HOME</Link></h6></Nav.Link>
-                            <Nav.Link href="#"><h6 className="navbar_text"><Link to="/findpeople">FIND PEOPLE</Link></h6></Nav.Link>
-                            <Nav.Link href="#"><h6 className="navbar_text"><Link to="/idea">IDEAS</Link></h6></Nav.Link>
-                            <Nav.Link href="#"><h6 className="navbar_text"><Link to="/competition">COMPETITIONS</Link></h6></Nav.Link>
-                            <Nav.Link href="#"><h6 className="navbar_text"><Link to="/competition">DISCUSSION FORUM</Link></h6></Nav.Link>
-                            <Nav.Link href="#"><h6 className="navbar_text"><Link to="/competition">ABOUT US</Link></h6></Nav.Link>
+                            <Link to="/home"><Nav.Link href="#home"><h6 className="navbar_text">HOME</h6></Nav.Link></Link>
+                            <Link to="/findpeople"><Nav.Link href="#findpeople"><h6 className="navbar_text">FIND PEOPLE</h6></Nav.Link></Link>
+                            <Link to="/idea"><Nav.Link href="#idea"><h6 className="navbar_text">IDEAS</h6></Nav.Link></Link>
+                            <Link to="/competition"><Nav.Link href="#competition"><h6 className="navbar_text">COMPETITIONS</h6></Nav.Link></Link>
+                            <Link to="/competition"><Nav.Link href="#"><h6 className="navbar_text">DISCUSSION FORUM</h6></Nav.Link></Link>
+                            <Link to="/competition"><Nav.Link href="#"><h6 className="navbar_text">ABOUT US</h6></Nav.Link></Link>
                         </Nav>
                         <Form inline>
                             <DropdownButton id="dropdown-item-button" title="+">
