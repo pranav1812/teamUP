@@ -10,6 +10,8 @@ import Find from "./components/findpeople";
 import Idea from "./components/idea";
 import Competition from "./components/competition";
 import Project from "./components/project";
+import Discussion_Forum from './components/discussion_forum';
+import Topic from './components/discussion_topic';
 //import App from './App.';
 
 ReactDOM.render(
@@ -21,6 +23,8 @@ ReactDOM.render(
     <Route path="/idea" component={Idea} exact/>
     <Route path="/competition" component={Competition} exact/>
     <Route path="/project" component={Project} exact/>
+    <Route path="/discussion" component={Discussion_Forum} exact/>
+    <Route path="/topic" component={Topic} exact/>
   </Router>,
   document.getElementById('root')
 );
