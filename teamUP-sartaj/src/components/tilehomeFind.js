@@ -3,15 +3,15 @@ import {Card,Button } from 'react-bootstrap';
 
 class TileFindHome extends Component {
     state = {  }
-    render() { 
-        return ( 
+    render() {
+        return (
             <div className="home_tile_find">
                 <Card className="home_find_card">
-                    <Card.Img variant="top" src="#" />
+                    <Card.Img variant="top" src={this.props.people.profileImg} />
                     <Card.Body>
-                        <Card.Title>Name</Card.Title>
+                        <Card.Title>{this.props.people.name}</Card.Title>
                         <Card.Text>
-                            nfjknv l4h3u4iu l gtqgy gygksejgzbb
+                            {this.props.people.tellus}
                         </Card.Text>
                         <Button type="button" className="home_find_button">View Profile</Button>
                     </Card.Body>
@@ -20,5 +20,5 @@ class TileFindHome extends Component {
          );
     }
 }
- 
+
 export default TileFindHome;

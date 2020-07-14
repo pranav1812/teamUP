@@ -15,13 +15,25 @@ class Home extends Component {
     this.onSubmit = this.onSubmit.bind(this);
     this.state = {
       todo: "" ,
-      todolists: []
+      todolists: [],
+      peoples: []
      }
   }
   onChangeTodo(e){
     this.setState({
       todo: e.target.value
     })
+  }
+  componentDidMount(){
+    axios.get('http://localhost:8000/register/getprof')
+    .then(response => {
+      console.log(response.data.profs)
+    this.setState({ peoples: response.data.profs })
+
+  })
+  .catch((error) => {
+    console.log(error);
+  })
   }
   onSubmit(e){
     e.preventDefault();
@@ -44,6 +56,12 @@ class Home extends Component {
       console.log(err)
     })
 
+  }
+
+  peopl(){
+    return this.state.peoples.map(people => {
+      return <TileFindHome people={people}/>
+    })
   }
 
   /*todolis(tods){
@@ -86,12 +104,7 @@ class Home extends Component {
                     <div className="home_card grid3">
                         <h4 className="card_heading">FIND PEOPLE</h4>
                         <div className="row">
-                            <TileFindHome />
-                            <TileFindHome />
-                            <TileFindHome />
-                            <TileFindHome />
-                            <TileFindHome />
-                            <TileFindHome />
+                            {this.peopl()}
                         </div>
                     </div>
                     <div className="home_card grid4">
