@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import NavigationBar from './navbar';
 import FindTile from './find_tiles';
 import FindNav from './find_nav';
+import Footer from './footer';
 
 class Find extends Component {
     state = {  }
@@ -54,6 +55,7 @@ class Find extends Component {
                         </div>
                     </div>
                 </div>
+                <Footer />
             </div>
          );
     }

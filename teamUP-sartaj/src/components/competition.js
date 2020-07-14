@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Competition_Img from '../images/competitions.svg';
 import Navbar from './navbar';
 import Comp_Card from './comp_card';
+import Footer from './footer';
 
 class Competition extends Component {
     state = {  }
@@ -29,6 +30,7 @@ class Competition extends Component {
                         </div>
                     </div>
                 </div>
+                <Footer />
             </div>
             
          );

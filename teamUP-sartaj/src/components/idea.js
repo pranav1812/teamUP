@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import NavBar from './navbar';
 import Idea_Card from './idea_card';
 import Idea_Img from '../images/idea.svg';
+import Footer from './footer';
 
 class Idea extends Component {
     state = {  }
@@ -49,6 +50,7 @@ class Idea extends Component {
                         </div>
                     </div>
                 </div>
+                <Footer />
             </div>
          );
     }

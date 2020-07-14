@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Navbar,Nav,Form,FormControl,Button,DropdownButton,Dropdown } from 'react-bootstrap';
-import { GoPlus } from 'react-icons/go';
+import { FaPlus } from 'react-icons/fa';
 import { Link } from "react-router-dom";
 class NavigationBar extends Component {
     state = {  }
@@ -20,11 +20,7 @@ class NavigationBar extends Component {
                             <Link to="/competition"><Nav.Link href="#"><h6 className="navbar_text">ABOUT US</h6></Nav.Link></Link>
                         </Nav>
                         <Form inline>
-                            <DropdownButton id="dropdown-item-button" title="+">
-                                <Dropdown.Item as="button">Action</Dropdown.Item>
-                                <Dropdown.Item as="button">Another action</Dropdown.Item>
-                                <Dropdown.Item as="button">Something else</Dropdown.Item>
-                            </DropdownButton>
+                            <i className="nav-icon"><FaPlus /></i>
                             <FormControl type="text" placeholder="Search" className="mr-sm-2" />
                             <Button className="navbar_button" variant="outline-success">Search</Button>
                         </Form>
