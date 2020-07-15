@@ -30,7 +30,7 @@ const cors = require('cors');
 const mongoose= require('mongoose');
 const register= require('./routes/register');
 const auth= require('./routes/auth')
-
+const project= require('./routes/project')
 const todo= require('./routes/todo')
 const discussion= require('./routes/discussion')
 const idea= require('./routes/idea')
@@ -51,6 +51,7 @@ mongoose.connect(mongoConnection,{useNewUrlParser: true, useCreateIndex: true, u
 app.use('/register', register)
 app.use('/auth', auth)
 app.use('/todo', todo)
+app.use('/project', project)
 app.use('/discussion', discussion)
 app.use('/idea', idea)
 

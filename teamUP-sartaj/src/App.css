@@ -207,25 +207,25 @@ footer i {
         padding: 20px;
         grid-template-columns: 1fr 1fr 1fr;
     }
-    
+
     .grid1 {
         grid-row: 1 / span 3;
         grid-column: 1;
         height: 700px;
     }
-    
+
     .grid2 {
         grid-column: 2;
         grid-row: 1;
         height: 340px;
     }
-    
+
     .grid3 {
         grid-column: 3;
         grid-row: 1;
         height: 340px;
     }
-    
+
     .grid4 {
         grid-column: 2 / span 2;
         grid-row: 2;
@@ -245,9 +245,10 @@ footer i {
     color:#17252a;
 }
 
-.todo_btn {
+.todo_btn,#todo_btn {
     font-size: 30px;
     padding-left: 5%;
+    color:#17252a;
 }
 
 .tile_home_todo {
@@ -407,7 +408,7 @@ footer i {
 .profile_img {
     border-radius: 50%;
     margin-bottom: 30px;
-    width: 50%;
+    width: 45%;
 }
 
 .profile_text {
@@ -567,5 +568,3 @@ footer i {
     border:none;
     border-radius: 10px;
 }
-
-
