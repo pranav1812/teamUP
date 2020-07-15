@@ -11,6 +11,8 @@ import Footer from './footer';
 import axios from 'axios';
 import { Link } from "react-router-dom";
 
+import ls from 'local-storage'
+
 class Home extends Component {
   constructor(props){
     super(props);
@@ -89,6 +91,14 @@ class Home extends Component {
   }
 
   componentDidMount(){
+
+    
+    axios.post('http://localhost:8000/auth/me',{uid: ls.get('uid')})
+      .then(res=>{
+        console.log(res.data)
+      })
+      .catch(err=>console.error(err))
+
     axios.get('http://localhost:8000/register/getprof')
     .then(response => {
       // console.log(response.data.profs)
