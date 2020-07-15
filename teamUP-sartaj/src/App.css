@@ -276,6 +276,12 @@ footer i {
     margin-left: 27px;
 }
 
+.find_tile_img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
 @media (max-width:576px)
 {
     .home_tile_find {

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Navbar from './navbar';
 import { Button,Modal } from 'react-bootstrap';
 import Discussion_Card from './discussion_cards';
+import Footer from './footer';
 
 class Discussion_Forum extends Component {
     constructor()
@@ -52,6 +53,7 @@ class Discussion_Forum extends Component {
                 <Discussion_Card />
                 <Discussion_Card />
                 <Discussion_Card />
+                <Footer />
             </div>
          );
     }

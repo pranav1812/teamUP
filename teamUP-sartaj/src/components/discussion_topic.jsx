@@ -3,6 +3,8 @@ import Navbar from './navbar';
 import Comment from './comment';
 import {Button} from 'react-bootstrap';
 import {FaArrowAltCircleUp,FaArrowAltCircleDown,FaBookmark} from 'react-icons/fa';
+import Footer from './footer';
+
 
 class Topic extends Component {
     state = {  }
@@ -33,6 +35,7 @@ class Topic extends Component {
                     <Comment />
                     <Comment />
                 </div>
+                <Footer />
             </div>
          );
     }
