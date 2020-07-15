@@ -3,6 +3,8 @@ import { Component } from 'react';
 import { Form,Button } from 'react-bootstrap';
 import axios from 'axios';
 
+import {connect} from 'react-redux'
+
 class Login extends Component {
 
     constructor(props) {
@@ -72,12 +74,24 @@ class Login extends Component {
       console.log(signup);
 
       axios.post('http://localhost:8000/register/create', signup)
-        .then(res => console.log(res.data))
+        .then(res => {
+          console.log(res.data)
+          var personalToDo={
+            uid: res.data._id,
+            member: res.data.username
+          }
+
+          axios.post('http://localhost:8000/todo//personalToDo/create', personalToDo)
+            .then(res=>{
+              console.log(res.data)
+            })
+            .catch(err=> console.error(err))
+        })
         .catch(err => {
           console.log(err);
         });
 
-        window.location = '/editprofile';
+        // window.location = '/editprofile';
     }
 
     onSubmitlogin(e) {
@@ -91,7 +105,11 @@ class Login extends Component {
       console.log(login);
 
       axios.post('http://localhost:8000/auth/login', login)
-        .then(res => console.log(res.data));
+        .then(res => {
+          console.log(JSON.stringify(res.data))
+          this.props.add_uid(res.data.id)
+          this.props.add_username(res.data.username)
+        });
 
       window.location = '/home';
     }
@@ -179,4 +197,42 @@ class Login extends Component {
     }
 }
 
-export default Login;
+const mapStateToProps = (state) => {
+  return {
+    uid: state.uid,
+    username: state.username,
+    completedProjects: state.completedProjects,
+    ongoingProjects: state.ongoingProjects
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    add_uid: (val) => {
+      dispatch({
+        type: 'ADD_UID',
+        value: val
+      })
+    },
+    add_username: (val) => {
+      dispatch({
+        type: 'ADD_USER_NAME',
+        value: val
+      })
+    },
+    add_cp: (val) => {
+      dispatch({
+        type: 'ADD_OP',
+        value: val
+      })
+    },
+    add_op: (val) => {
+      dispatch({
+        type: 'ADD_OP',
+        value: val
+      })
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

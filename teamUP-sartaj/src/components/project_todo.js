@@ -13,14 +13,7 @@ class Project_Todo extends Component {
                         <i className="col-1 m-2"><FaPlusCircle /></i>
                     </div>
                     <Project_Todo_list />
-                    <Project_Todo_list />
-                    <Project_Todo_list /> 
-                    <Project_Todo_list />
-                    <Project_Todo_list />
-                    <Project_Todo_list />
-                    <Project_Todo_list /> 
-                    <Project_Todo_list />
-                    <Project_Todo_list />           
+                               
                 </div>
             </div>
         );

@@ -8,8 +8,8 @@ todo.post('/personalToDo/create', async(req, res)=>{
     if (alreadyPresent) return res.send('you already have a todo, edit that instead')
 */
     try{
-    console.log(req.body.task)
-        var list= new PersonalToDo({$push: {tasks: {task: req.body.task}}})
+    console.log(req.body)
+        var list= new PersonalToDo(req.body)
         var data= await list.save()
         res.send(`saved your todo list. \n ${data}`)
    }
@@ -40,7 +40,7 @@ todo.post('/groupToDo/create', async(req, res)=>{
 todo.put('/personalToDo/add', async(req, res)=>{
     try{
         var list= await PersonalToDo.findOne({uid: "5f094de7c30b346650d86cc0"}).exec()
-        list.tasks.push(...req.body.tasks)
+        list.tasks.push(req.body.tasks)
         var newList= await list.save()
         res.send(`updated, your new todo list looks like \n ${newList}`)
     }
@@ -89,12 +89,14 @@ todo.put('/groupToDo/update_status', async(req, res)=>{
         console.log(err)
     }
 })
-todo.get("/getpersonaltodo", (req, res, next) => {
+todo.get("/myTodo", (req, res) => {
     PersonalToDo.findOne({uid: "5f094de7c30b346650d86cc0"}).then(data => {
       console.log(data.tasks)
-        res.status(200).send(
-            data.tasks
-            //profileImg: data.profileImg
+        res.status(200).json({
+            tasks: data.tasks
+        }
+            
+           
         );
     });
 });

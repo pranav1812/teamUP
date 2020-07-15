@@ -23,7 +23,7 @@ class FindTile extends Component {
             <div>
                 <div className="find_tile">
                     <Card className="find_card">
-                        <Card.Img variant="top" src={this.props.people.profileImg} />
+                        <Card.Img className="find_tile_img" variant="top" src={this.props.people.profileImg} />
                         <Card.Body>
                             <Card.Title>{this.props.people.name}</Card.Title>
                             <Card.Text>

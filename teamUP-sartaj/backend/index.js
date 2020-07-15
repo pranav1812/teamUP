@@ -25,6 +25,8 @@ const bodyParser= require('body-parser');
 const path = require('path');
 const cors = require('cors');
 
+
+
 const mongoose= require('mongoose');
 const register= require('./routes/register');
 const auth= require('./routes/auth')

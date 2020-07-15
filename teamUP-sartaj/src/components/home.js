@@ -15,19 +15,21 @@ class Home extends Component {
   constructor(props){
     super(props);
     this.onChangeTodo = this.onChangeTodo.bind(this);
-    //this.todolis = this.todolis.bind(this);
     this.onChangeName = this.onChangeName.bind(this);
     this.onChangeDesc = this.onChangeDesc.bind(this);
     this.onChangePublic = this.onChangePublic.bind(this);
     this.onChangeMname = this.onChangeMname.bind(this);
     this.onChangeRole = this.onChangeRole.bind(this);
+    this.todolists = this.todolists.bind(this);
     this.handleModal = this.handleModal.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
     this.onSubmitProject = this.onSubmitProject.bind(this);
     this.addmember = this.addmember.bind(this);
     this.state = {
       show:false,
-      todo: "" ,
+      todo: {
+        task: ''
+      } ,
       todolists: [],
       peoples: [],
       name: '',
@@ -45,7 +47,9 @@ class Home extends Component {
 
   onChangeTodo(e){
     this.setState({
-      todo: e.target.value
+      todo: {
+        task: e.target.value
+      }
     })
   }
   onChangeName(e){
@@ -74,19 +78,41 @@ class Home extends Component {
       role: e.target.value
     })
   }
+
+
+  todolists=()=>{
+    return(
+      this.state.todolists.map(obj=>{
+        return <TileHomeToDo tod={obj} />
+      })
+    )
+  }
+
   componentDidMount(){
     axios.get('http://localhost:8000/register/getprof')
     .then(response => {
-      console.log(response.data.profs)
+      // console.log(response.data.profs)
     this.setState({ peoples: response.data.profs })
+
 
   })
   .catch((error) => {
     console.log(error);
   })
+
+    axios.get('http://localhost:8000/todo/mytodo')
+    .then(res=>{
+      this.setState({
+        todolists: res.data.tasks
+
+      })
+      console.log(this.state)
+    })
+    .catch(err=>{console.error(err)})
   }
   onSubmit(e){
-    e.preventDefault();
+    // e.preventDefault();
+    alert(69)
     const work = {
       tasks: this.state.todo
     }
@@ -148,18 +174,7 @@ class Home extends Component {
     })
   }
 
-  /*todolis(tods){
-    if(tods!=null){
-    return tods.map((tod) => {
-      return (
-        <div key={tod.id}>
-        <TileHomeToDo tod={tod} />
-        </div>
-      )
-    });
-  }
-  {this.todolis(this.state.todolists)}
-}*/
+
     render() {
         return (
             <div>
@@ -178,11 +193,12 @@ class Home extends Component {
                         <h4 className="card_heading">TO-DO LIST</h4>
                         <div className="row">
                           <form className="col-11" onSubmit={this.onSubmit}>
-                          <input className="inputtodo" type="text" placeholder="ADD TASK" value={this.state.todo} onChange={this.onChangeTodo} />
+                          <input className="inputtodo" type="text" placeholder="ADD TASK"  onChange={this.onChangeTodo} />
 
-                          <i className="todo_btn"><FaPlusCircle /></i>
+                          <i className="todo_btn" onClick={this.onSubmit}><FaPlusCircle /></i>
 
                           </form>
+                          {this.todolists()}
                           </div>
                     </div>
                     <div className="home_card grid3">
