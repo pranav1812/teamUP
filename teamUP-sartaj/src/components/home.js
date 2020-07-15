@@ -48,6 +48,7 @@ class Home extends Component {
   }
   onSubmit(e){
     e.preventDefault();
+    
     const work = {
       tasks: this.state.todo
     }
@@ -75,18 +76,7 @@ class Home extends Component {
     })
   }
 
-  /*todolis(tods){
-    if(tods!=null){
-    return tods.map((tod) => {
-      return (
-        <div key={tod.id}>
-        <TileHomeToDo tod={tod} />
-        </div>
-      )
-    });
-  }
-  {this.todolis(this.state.todolists)}
-}*/
+
     render() {
         return (
             <div>
@@ -106,6 +96,8 @@ class Home extends Component {
                         <div className="row">
                           <form className="col-11" onSubmit={this.onSubmit}>
                           <input className="inputtodo" type="text" placeholder="ADD TASK" value={this.state.todo} onChange={this.onChangeTodo} />
+
+                          <button type='submit'>Add</button>
 
                           <i className="todo_btn"><FaPlusCircle /></i>
 

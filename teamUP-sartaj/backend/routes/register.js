@@ -74,6 +74,7 @@ let multer = require('multer'),
 const register= express.Router()
 var idi;
 const authmdw  = require('../middleware/authmdw')
+
 register.get('/getprof',(req,res)=>{
   User.find().then(data => {
       res.status(200).json({

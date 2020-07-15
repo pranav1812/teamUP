@@ -89,7 +89,7 @@ todo.put('/groupToDo/update_status', async(req, res)=>{
         console.log(err)
     }
 })
-todo.get("/getpersonaltodo", (req, res, next) => {
+todo.get("/myTodo", (req, res) => {
     PersonalToDo.findOne({uid: "5f094de7c30b346650d86cc0"}).then(data => {
       console.log(data.tasks)
         res.status(200).send(
