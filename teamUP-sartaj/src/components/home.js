@@ -83,7 +83,7 @@ class Home extends Component {
   todolists=()=>{
     return(
       this.state.todolists.map(obj=>{
-        return <TileHomeToDo tod={obj} />
+        return <TileHomeToDo tod={obj}/>
       })
     )
   }
