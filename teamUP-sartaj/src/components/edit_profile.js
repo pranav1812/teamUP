@@ -131,7 +131,7 @@ class EditProfile extends Component {
                         <Form.Control as="textarea" rows="3" value={this.state.tellus} onChange={this.onChangeTellus}/>
                     </Form.Group>
                     <Form.Group>
-                        <Form.Label className="edit_profile_text">Select the fileds you are interested to work in</Form.Label>
+                        <Form.Label className="edit_profile_text">Select the fields you are interested to work in</Form.Label>
                             <Form.Check  className="edit_profile_text" type="radio" label="Machine Learning" aria-label="radio 1" value="Machine Learning" onChange={this.onChangeIntfeilds}/>
                             <Form.Check  className="edit_profile_text" type="radio" label="Web Development" aria-label="radio 1" value="Web Development" onChange={this.onChangeIntfeilds}/>
                             <Form.Check  className="edit_profile_text" type="radio" label="Android App Development" aria-label="radio 1" value="Android App Development" onChange={this.onChangeIntfeilds}/>
