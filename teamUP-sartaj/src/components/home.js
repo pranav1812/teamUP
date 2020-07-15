@@ -185,7 +185,7 @@ class Home extends Component {
                     <div className="row mr-0">
                             <h4 className="card_heading col-10">PROFILE</h4>
 
-                            <Link to="/editprofile"><i className="todo_btn"><MdModeEdit /></i></Link>
+                            <Link id="todo_btn" to="/editprofile"><i><MdModeEdit /></i></Link>
                         </div>
                         <Profile />
                     </div>

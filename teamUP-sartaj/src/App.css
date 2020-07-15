@@ -245,9 +245,10 @@ footer i {
     color:#17252a;
 }
 
-.todo_btn {
+.todo_btn,#todo_btn {
     font-size: 30px;
     padding-left: 5%;
+    color:#17252a;
 }
 
 .tile_home_todo {

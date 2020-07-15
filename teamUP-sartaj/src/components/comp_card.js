@@ -8,14 +8,12 @@ class Comp_Card extends Component {
             <div>
                 <div className="find_tile">
                     <Card className="find_card">
-                        <Card.Img variant="top" src="/" />
                         <Card.Body>
-                            <Card.Title>Card Title</Card.Title>
+                            <Card.Title>Competition</Card.Title>
                             <Card.Text>
-                            Some quick example text to build on the card title and make up the bulk of
-                            the card's content.
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
                             </Card.Text>
-                            <Button className="home_find_button">View Full Profile</Button>
+                            <Button className="home_find_button">Register</Button>
                         </Card.Body>
                     </Card>
                 </div>
