@@ -198,7 +198,9 @@ class Home extends Component {
                           <i className="todo_btn" onClick={this.onSubmit}><FaPlusCircle /></i>
 
                           </form>
+                          <div className="col-12">
                           {this.todolists()}
+                          </div>
                           </div>
                     </div>
                     <div className="home_card grid3">
