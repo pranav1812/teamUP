@@ -8,7 +8,7 @@ todo.post('/personalToDo/create', async(req, res)=>{
     if (alreadyPresent) return res.send('you already have a todo, edit that instead')
 */
     try{
-    console.log(req.body)
+    
         var list= new PersonalToDo(req.body)
         var data= await list.save()
         res.send(`saved your todo list. \n ${data}`)
@@ -91,7 +91,7 @@ todo.put('/groupToDo/update_status', async(req, res)=>{
 })
 todo.get("/myTodo", (req, res) => {
     PersonalToDo.findOne({uid: "5f094de7c30b346650d86cc0"}).then(data => {
-      console.log(data.tasks)
+      
         res.status(200).json({
             tasks: data.tasks
         }

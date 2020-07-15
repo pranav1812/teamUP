@@ -24,7 +24,7 @@ auth.post('/login', async(req, res)=>{
                 isAdmin: user.isAdmin
             }, 'secret key')
 
-            res.cookie('jwt',token, {expires: new Date(Date.now() + 24*3*60*60*1000), httpOnly: true })
+            res.cookie('jwt',token, {expires: new Date(Date.now() + 24*3*60*60*1000), httpOnly: false })
             
             res.json({
                 id: user._id,
@@ -39,8 +39,8 @@ auth.post('/login', async(req, res)=>{
 })
 
 // current user
-auth.get('/me',authmdw, async (req,res)=>{
-    var user= await User.findById(req.user._id).select(['-__v','-password'])
+auth.post('/me', async (req,res)=>{
+    var user= await User.findOne({_id: req.body.uid}).select(['-__v','-password'])
     res.send(user)
 })
 
