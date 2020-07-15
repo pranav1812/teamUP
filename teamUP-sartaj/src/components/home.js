@@ -6,22 +6,35 @@ import Profile from './profile_home'
 import { MdModeEdit } from 'react-icons/md';
 import Projects_Card from './ongoing_projects_card';
 import {FaPlusCircle} from 'react-icons/fa';
-import {Modal,Button} from 'react-bootstrap';
+import {Modal,Button,Form} from 'react-bootstrap';
 import Footer from './footer';
 import axios from 'axios';
+import { Link } from "react-router-dom";
 
 class Home extends Component {
   constructor(props){
     super(props);
     this.onChangeTodo = this.onChangeTodo.bind(this);
     //this.todolis = this.todolis.bind(this);
+    this.onChangeName = this.onChangeName.bind(this);
+    this.onChangeDesc = this.onChangeDesc.bind(this);
+    this.onChangePublic = this.onChangePublic.bind(this);
+    this.onChangeMname = this.onChangeMname.bind(this);
+    this.onChangeRole = this.onChangeRole.bind(this);
     this.handleModal = this.handleModal.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+    this.onSubmitProject = this.onSubmitProject.bind(this);
+    this.addmember = this.addmember.bind(this);
     this.state = {
       show:false,
       todo: "" ,
       todolists: [],
-      peoples: []
+      peoples: [],
+      name: '',
+      description: '',
+      ispublic: true,
+      mname: '',
+      role: ''
      }
   }
 
@@ -33,6 +46,32 @@ class Home extends Component {
   onChangeTodo(e){
     this.setState({
       todo: e.target.value
+    })
+  }
+  onChangeName(e){
+    this.setState({
+      name: e.target.value
+    })
+  }
+
+  onChangeDesc(e){
+    this.setState({
+      description: e.target.value
+    })
+  }
+  onChangePublic(e){
+    this.setState({
+      ispublic: e.target.value
+    })
+  }
+  onChangeMname(e){
+    this.setState({
+      mname: e.target.value
+    })
+  }
+  onChangeRole(e){
+    this.setState({
+      role: e.target.value
     })
   }
   componentDidMount(){
@@ -68,6 +107,40 @@ class Home extends Component {
     })
 
   }
+  onSubmitProject(e)
+  {
+    e.preventDefault();
+    const project ={
+      name: this.state.name,
+      description: this.state.description,
+      isPublic: this.state.ispublic
+    }
+    axios.post('http://localhost:8000/project/add', project).then(res => {
+      console.log(res)
+    }).catch(err => {
+      console.log(err)
+    })
+
+    if(this.state.ispublic == true){
+      axios.post('http://localhost:8000/idea/add', project).then(res => {
+        console.log(res)
+      }).catch(err => {
+        console.log(err)
+      })
+    }
+  }
+  addmember(){
+    const update ={
+      name: this.state.mname,
+      role: this.state.role
+    }
+    alert(this.state.mname)
+    axios.put('http://localhost:8000/project/add_member', update).then(res => {
+      console.log(res)
+    }).catch(err => {
+      console.log(err)
+    })
+  }
 
   peopl(){
     return this.state.peoples.map(people => {
@@ -97,7 +170,7 @@ class Home extends Component {
                     <div className="row mr-0">
                             <h4 className="card_heading col-10">PROFILE</h4>
 
-                            <i className="todo_btn"><MdModeEdit /></i>
+                            <Link to="/editprofile"><i className="todo_btn"><MdModeEdit /></i></Link>
                         </div>
                         <Profile />
                     </div>
@@ -130,42 +203,39 @@ class Home extends Component {
                                 </Modal.Header>
                                 <Modal.Body  className="modal_body">
                                     <div>
-                                        
-                                        <div className="row"> 
-                                            <h6 className="col-3">Name: </h6>
-                                            <p>ibIdvywvfj</p>
+                                        <form onSubmit={this.onSubmitProject}>
+                                        <div className="row">
+                                            <h6 className="col-3">Project Name: </h6>
+                                            <input type="name" value={this.state.name} onChange={this.onChangeName} />
                                         </div>
-                                        <div className="row"> 
-                                            <h6 className="col-3">User-Name: </h6>
-                                            <p>ibIdvywvfj</p>
+                                        <div className="row">
+                                            <h6 className="col-3">Description: </h6>
+                                            <input type="name" value={this.state.description} onChange={this.onChangeDesc} />
                                         </div>
-                                        <div className="row"> 
-                                            <h6 className="col-3">Branch: </h6>
-                                            <p>coe</p>
+                                        <div className="row">
+                                        <Form.Group controlId="exampleForm.ControlSelect1">
+                                            <Form.Label className="edit_profile_text">Select privacy</Form.Label>
+                                            <Form.Control as="select" custom onChange={this.onChangePublic}>
+                                            <option value="true">public</option>
+                                            <option value="false">private</option>
+                                            </Form.Control>
+                                        </Form.Group>
                                         </div>
-                                        <div className="row"> 
-                                            <h6 className="col-3">Bio: </h6>
-                                            <p>lsnnnKKBFkbiBKNDoBBEEIK NEKB  oibwirg BFHAIV</p>
+                                        <Button className="modal_btn" type="submit">create project</Button>
+                                         </form>
+                                        <div className="row">
+                                            <h2 className="col-12">ADD MEMBERS</h2>
                                         </div>
-                                        <div className="row"> 
-                                            <h6 className="col-3">Skills: </h6>
-                                            <p>lsnnnKKBFkbiBKNDoBBEEIK NEKB  oibwirg BFHAIV</p>
+                                        <div className="row">
+                                        <input className="inputtodo" type="text" placeholder="ADD MEMBER" value={this.state.mname} onChange={this.onChangeMname} />
+                                        <input className="inputtodo" type="text" placeholder="ROLE" value={this.state.role} onChange={this.onChangeRole} />
+
+                                        <i className="todo_btn" onClick={this.addmember}><FaPlusCircle /></i>
+
+
                                         </div>
-                                        <div className="row"> 
-                                            <h6 className="col-3">Fields Interested: </h6>
-                                            <p>lsnnnKKBFkbiBKNDoBBEEIK NEKB  oibwirg BFHAIV</p>
-                                        </div>
-                                        <div className="row"> 
-                                            <h6 className="col-3">Git-Hub Link: </h6>
-                                            <p>lsnnnKKB</p>
-                                        </div>
-                                        <div className="row"> 
-                                            <h6 className="col-3">E-Mail: </h6>
-                                            <p>lsnnnKKB</p>
-                                        </div>
-                                        <div className="row"> 
-                                            <h6 className="col-3">Projects: </h6>
-                                        </div>
+
+
                                     </div>
                                 </Modal.Body>
                                 <Modal.Footer className="modal_header">

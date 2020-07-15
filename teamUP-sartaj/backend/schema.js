@@ -267,8 +267,7 @@ const projectSchema= mongoose.Schema({
     isPublic: {
         type: Boolean,
         default: true
-    },
-    mentor_id: String
+    }
 },{timestamp: true})
 
 // task schema

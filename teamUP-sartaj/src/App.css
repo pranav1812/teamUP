@@ -77,7 +77,6 @@ body {
 
 .navigation_bar {
     background-color: #17252a;
-    z-index: 100;
 }
 
 .navbar_title {
@@ -115,23 +114,10 @@ body {
     color:#2b7a78
 }
 
-.nav-icon {
+#dropdown-item-button {
     color:#def2f1;
-    font-size: 20px;
-    padding-right:40px;
-}
-
-/*----------footer--------------*/
-
-footer {
-    background-color: #17252a;
-    color:#def2f1;
-    padding: 30px 0px;
-}
-
-footer i {
-    font-size: 40px;
-    padding: 0px 10px;
+    font-weight: bolder;
+    font-size: 30px;
 }
 
 /*------homePage---------*/
@@ -207,25 +193,25 @@ footer i {
         padding: 20px;
         grid-template-columns: 1fr 1fr 1fr;
     }
-    
+
     .grid1 {
         grid-row: 1 / span 3;
         grid-column: 1;
         height: 700px;
     }
-    
+
     .grid2 {
         grid-column: 2;
         grid-row: 1;
         height: 340px;
     }
-    
+
     .grid3 {
         grid-column: 3;
         grid-row: 1;
         height: 340px;
     }
-    
+
     .grid4 {
         grid-column: 2 / span 2;
         grid-row: 2;
@@ -236,24 +222,10 @@ footer i {
 
 /*-----------------------*/
 
-.inputtodo {
-    width: 80%;
-    margin-left: 5%;
-    border-radius: 5px;
-    border:none;
-    padding-left:20px;
-    color:#17252a;
-}
-
-.todo_btn {
-    font-size: 30px;
-    padding-left: 5%;
-}
-
 .tile_home_todo {
     background-color: #def2f1;
-    min-height: 70px;
-    margin:5px 6px;
+    min-height: 50px;
+    margin:3px 6px;
     border-radius: 5px;
 }
 
@@ -274,14 +246,6 @@ footer i {
 .home_tile_find {
     padding:0px 10px;
     margin-left: 27px;
-}
-
-@media (max-width:576px)
-{
-    .home_tile_find {
-        padding:0px 10px;
-        margin-left: 20%;
-    }
 }
 
 .home_find_card {
@@ -400,8 +364,8 @@ footer i {
 
 .profile_img {
     border-radius: 50%;
+    width: 60%;
     margin-bottom: 30px;
-    width: 50%;
 }
 
 .profile_text {
@@ -417,81 +381,9 @@ footer i {
 .projects_card {
     background-color: #def2f1;
     width: 200px;
-    margin: 12px;
+    margin: 10px;
 }
 
 .grid4 {
     padding:0px 50px;
 }
-
-/*--------Project-----------------*/
-
-.project_heading {
-    text-align:center;
-    color: #17252a;
-    padding-top: 10px;
-    font-weight: bold;
-    font-size: 40px;
-    padding-bottom: 20px;
-}
-
-.project_card {
-    height:600px;
-    background-color: #3aafa9;
-    border-radius: 30px;
-    overflow: auto;
-    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    text-align: center;
-    padding:20px 0px;
-}
-
-.project_card::-webkit-scrollbar {
-    display: none;
-  }
-
-.project {
-    padding:20px;
-}
-
-.project_info {
-    padding-left:20px;
-    padding-right: 20px;
-}
-
-/*-----------Modal --------------*/
-
-.modal_header,.modal_footer {
-    background-color: #3aafa9;
-    color: #17252a;
-    font-weight: bold;
-}
-
-.close-modal-btn {
-    font-weight: bolder;
-    cursor: pointer;
-    font-size: 20px;
-}
-
-.modal_body {
-    background-color: ;
-}
-
-.modal_img {
-    height:120px;
-    width: 120px;
-    border-radius: 50%;
-    margin:20px;
-}
-
-.modal_btn {
-    background-color: #17252a;
-    border:none;
-    color: #def2f1;
-    border-radius: 20px;
-}
-
-.modal_btn:hover {
-    background-color: #def2f1;
-    color:#17252a;
-}
-

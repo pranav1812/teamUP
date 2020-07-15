@@ -4,6 +4,7 @@ import {Card,Button } from 'react-bootstrap';
 class TileFindHome extends Component {
     state = {  }
     render() {
+      console.log(typeof(this.props.people.tellus))
         return (
             <div className="home_tile_find">
                 <Card className="home_find_card">

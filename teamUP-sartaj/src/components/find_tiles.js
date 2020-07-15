@@ -10,6 +10,7 @@ class FindTile extends Component {
         this.state={
             show:false
         }
+
     }
 
     handleModal()
