@@ -20,7 +20,7 @@ class NavigationBar extends Component {
     render() {
         return (
             <div className="navigation_bar">
-                <Navbar expand="lg">
+                <Navbar expand="xl">
                     <Navbar.Brand href="#home"><h3 className="navbar_title">Team<span>UP</span>.</h3></Navbar.Brand>
                     <Navbar.Toggle className="navbar_toggler_icon" aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse  id="basic-navbar-nav">
