@@ -74,12 +74,24 @@ class Login extends Component {
       console.log(signup);
 
       axios.post('http://localhost:8000/register/create', signup)
-        .then(res => console.log(res.data))
+        .then(res => {
+          console.log(res.data)
+          var personalToDo={
+            uid: res.data._id,
+            member: res.data.username
+          }
+
+          axios.post('http://localhost:8000/todo//personalToDo/create', personalToDo)
+            .then(res=>{
+              console.log(res.data)
+            })
+            .catch(err=> console.error(err))
+        })
         .catch(err => {
           console.log(err);
         });
 
-        window.location = '/editprofile';
+        // window.location = '/editprofile';
     }
 
     onSubmitlogin(e) {

@@ -7,6 +7,7 @@ class TileHomeToDO extends Component {
       }
     }*/
     render() {
+       
         return (
             <div className="row align-items-center tile_home_todo mr-3 ml-3">
                  <div className="col-9">

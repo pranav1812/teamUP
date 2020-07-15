@@ -273,10 +273,7 @@ const projectSchema= mongoose.Schema({
 
 // task schema
 var taskSchema= mongoose.Schema({
-    tid:{
-        type: String,
-        required: true
-    },
+    tid: String,
     task: {
         type: String,
         required: true
