@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Navbar,Nav,Form,FormControl,Button,Modal } from 'react-bootstrap';
 import { FaPlus } from 'react-icons/fa';
 import { Link } from "react-router-dom";
+import { FaPlusCircle } from 'react-icons/fa';
 class NavigationBar extends Component {
     constructor()
     {
@@ -45,41 +46,34 @@ class NavigationBar extends Component {
                                 </Modal.Header>
                                 <Modal.Body  className="modal_body">
                                     <div>
-                                        
-                                        <div className="row"> 
-                                            <h6 className="col-3">Name: </h6>
-                                            <p>ibIdvywvfj</p>
+                                        <form onSubmit={this.onSubmitProject}>
+                                        <div className="row mb-2">
+                                            <h6 className="col-3">Project Name: </h6>
+                                            <input className="col-8" type="name" value={this.state.name} onChange={this.onChangeName} />
                                         </div>
-                                        <div className="row"> 
-                                            <h6 className="col-3">User-Name: </h6>
-                                            <p>ibIdvywvfj</p>
+                                        <div className="row mb-2">
+                                            <h6 className="col-3">Description: </h6>
+                                            <input className="col-8" type="name" value={this.state.description} onChange={this.onChangeDesc} />
                                         </div>
-                                        <div className="row"> 
-                                            <h6 className="col-3">Branch: </h6>
-                                            <p>coe</p>
+                                        <div className="row">
+                                        <Form.Group controlId="exampleForm.ControlSelect1">
+                                            <Form.Label className="col-3">Select privacy</Form.Label>
+                                            <Form.Control as="select" custom onChange={this.onChangePublic}>
+                                            <option value="true">public</option>
+                                            <option value="false">private</option>
+                                            </Form.Control>
+                                        </Form.Group>
                                         </div>
-                                        <div className="row"> 
-                                            <h6 className="col-3">Bio: </h6>
-                                            <p>lsnnnKKBFkbiBKNDoBBEEIK NEKB  oibwirg BFHAIV</p>
+                                        <Button className="modal_btn mb-2" type="submit">create project</Button>
+                                         </form>
+                                        <div className="row mb-2">
+                                            <h5 className="col-11">ADD MEMBERS</h5>
                                         </div>
-                                        <div className="row"> 
-                                            <h6 className="col-3">Skills: </h6>
-                                            <p>lsnnnKKBFkbiBKNDoBBEEIK NEKB  oibwirg BFHAIV</p>
-                                        </div>
-                                        <div className="row"> 
-                                            <h6 className="col-3">Fields Interested: </h6>
-                                            <p>lsnnnKKBFkbiBKNDoBBEEIK NEKB  oibwirg BFHAIV</p>
-                                        </div>
-                                        <div className="row"> 
-                                            <h6 className="col-3">Git-Hub Link: </h6>
-                                            <p>lsnnnKKB</p>
-                                        </div>
-                                        <div className="row"> 
-                                            <h6 className="col-3">E-Mail: </h6>
-                                            <p>lsnnnKKB</p>
-                                        </div>
-                                        <div className="row"> 
-                                            <h6 className="col-3">Projects: </h6>
+                                        <div className="row">
+                                        <input className="inputtodo mb-2" type="text" placeholder="ADD MEMBER" value={this.state.mname} onChange={this.onChangeMname} />
+                                        <input className="inputtodo" type="text" placeholder="ROLE" value={this.state.role} onChange={this.onChangeRole} />
+
+                                        <i className="todo_btn" onClick={this.addmember}><FaPlusCircle /></i>
                                         </div>
                                     </div>
                                 </Modal.Body>

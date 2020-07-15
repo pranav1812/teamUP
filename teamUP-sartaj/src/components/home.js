@@ -222,38 +222,34 @@ class Home extends Component {
                                 <Modal.Body  className="modal_body">
                                     <div>
                                         <form onSubmit={this.onSubmitProject}>
-                                        <div className="row">
+                                        <div className="row mb-2">
                                             <h6 className="col-3">Project Name: </h6>
-                                            <input type="name" value={this.state.name} onChange={this.onChangeName} />
+                                            <input className="col-8" type="name" value={this.state.name} onChange={this.onChangeName} />
                                         </div>
-                                        <div className="row">
+                                        <div className="row mb-2">
                                             <h6 className="col-3">Description: </h6>
-                                            <input type="name" value={this.state.description} onChange={this.onChangeDesc} />
+                                            <input className="col-8" type="name" value={this.state.description} onChange={this.onChangeDesc} />
                                         </div>
                                         <div className="row">
                                         <Form.Group controlId="exampleForm.ControlSelect1">
-                                            <Form.Label className="edit_profile_text">Select privacy</Form.Label>
+                                            <Form.Label className="col-3">Select privacy</Form.Label>
                                             <Form.Control as="select" custom onChange={this.onChangePublic}>
                                             <option value="true">public</option>
                                             <option value="false">private</option>
                                             </Form.Control>
                                         </Form.Group>
                                         </div>
-                                        <Button className="modal_btn" type="submit">create project</Button>
+                                        <Button className="modal_btn mb-2" type="submit">create project</Button>
                                          </form>
-                                        <div className="row">
-                                            <h2 className="col-12">ADD MEMBERS</h2>
+                                        <div className="row mb-2">
+                                            <h5 className="col-11">ADD MEMBERS</h5>
                                         </div>
                                         <div className="row">
-                                        <input className="inputtodo" type="text" placeholder="ADD MEMBER" value={this.state.mname} onChange={this.onChangeMname} />
+                                        <input className="inputtodo mb-2" type="text" placeholder="ADD MEMBER" value={this.state.mname} onChange={this.onChangeMname} />
                                         <input className="inputtodo" type="text" placeholder="ROLE" value={this.state.role} onChange={this.onChangeRole} />
 
                                         <i className="todo_btn" onClick={this.addmember}><FaPlusCircle /></i>
-
-
                                         </div>
-
-
                                     </div>
                                 </Modal.Body>
                                 <Modal.Footer className="modal_header">
