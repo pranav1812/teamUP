@@ -5,7 +5,8 @@ class Comment extends Component {
     render() { 
         return ( 
             <div class="comment">
-
+                <h5> {this.props.from}</h5>
+                <p>{this.props.msg}</p>
             </div>
          );
     }
