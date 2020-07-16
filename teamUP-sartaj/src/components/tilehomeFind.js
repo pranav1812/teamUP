@@ -49,7 +49,7 @@ class TileFindHome extends Component {
                     <Card.Body>
                         <Card.Title>{this.props.people.name}</Card.Title>
                         <Card.Text>
-                            {this.props.people.tellus/*.substring(0,40)*/}
+                            {this.props.people.tellus? this.props.people.tellus.substring(0,40) : null}
                         </Card.Text>
                         <Button type="button" onClick={()=>{this.handleModal(); this.finduser(this.props.people._id);}} className="home_find_button">View Profile</Button>
                         <Modal show={this.state.show} onHide={()=>this.handleModal()}>

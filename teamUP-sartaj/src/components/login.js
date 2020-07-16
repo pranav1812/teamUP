@@ -107,12 +107,17 @@ class Login extends Component {
 
       axios.post('http://localhost:8000/auth/login', login)
         .then(res => {
+          if(res.data != "wrong password"){
           console.log(JSON.stringify(res.data))
           this.props.add_uid(res.data.id)
           this.props.add_username(res.data.username)
           ls.set('uid', res.data.id )
           ls.set('username', res.data.username )
-          window.location = '/home';
+          window.location = '/home'
+        }
+        else{
+          alert("wrong password")
+        }
         })
         .catch(err=> console.error(err))
 
