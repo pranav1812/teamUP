@@ -27,7 +27,7 @@ class TileHomeToDO extends Component {
                      {this.props.tod.task}
                  </div>
                  <div className="col-2 ml-1">
-                     <button className="tile_home_button " onClick={this.done(this.props.tod._id)} type="button">Done</button>
+                     <button className="tile_home_button " onClick={()=> this.done(this.props.tod._id)} type="button">Done</button>
                      {/*<button className="tile_home_button ml-2 X" type="button">X</button>*/}
                  </div>
             </div>
@@ -36,3 +36,5 @@ class TileHomeToDO extends Component {
 }
 
 export default TileHomeToDO;
+
+/* onClick={this.done(this.props.tod._id)}*/

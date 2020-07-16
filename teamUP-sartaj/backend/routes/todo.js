@@ -68,7 +68,7 @@ todo.put('/personalToDo/update_status', async(req, res)=>{
         // list.tasks.findOne({tid: req.body.tid}).set({status: req.body.status})
         var task= list.tasks.find(obj=> obj._id== req.body.tid)
         task.status= req.body.status
-        console.log(req.body.status)
+        //console.log(req.body.status)
         var newList= await list.save()
         res.send(`updated, your new todo list looks like \n ${newList}`)
     }
@@ -91,9 +91,12 @@ todo.put('/groupToDo/update_status', async(req, res)=>{
     }
 })
 todo.get("/myTodo", (req, res) => {
-  console.log("drftyguhijokojihugyf");
+  //console.log("drftyguhijokojihugyf");
     var list= PersonalToDo.findOne({uid: "5f094de7c30b346650d86cc0"}).then(data => {
-      var x[] = data.tasks.find(obj=> obj.status== "pending")
+      /*data.tasks.forEach(obj => {
+        console.log(obj)
+      })*/
+      var x = data.tasks.filter(obj=> obj.status== "pending")
       console.log(x)
         res.status(200).json({
             tasks: x

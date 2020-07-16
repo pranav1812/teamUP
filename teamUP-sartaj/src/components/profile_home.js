@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Profile_Img from '../images/test2.png'
 import axios from 'axios';
+import ls from 'local-storage'
 class Profile extends Component {
   constructor(props){
     super(props);
@@ -10,7 +11,7 @@ class Profile extends Component {
      }
   }
   componentDidMount(){
-    axios.get('http://localhost:8000/register/getprofile').then(response => {
+    axios.post('http://localhost:8000/register/getprofile',{uid: ls.get('uid')}).then(response => {
 
       this.setState({
         profile: response.data.profile,
