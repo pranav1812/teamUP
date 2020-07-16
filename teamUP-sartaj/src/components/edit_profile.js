@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import { Component } from 'react';
 import { Form,Button } from 'react-bootstrap';
+import ls from 'local-storage'
 
 class EditProfile extends Component {
   constructor(props) {
@@ -87,6 +88,13 @@ class EditProfile extends Component {
 
   onSubmit(e) {
     e.preventDefault();
+    /*axios.post('http://localhost:8000/auth/me',{uid: ls.get('uid')})
+      .then(res=>{
+        this.setState({uid: res.data._id})
+        console.log(res.data)
+      })
+      .catch(err=>console.error(err))*/
+
     const formData = new FormData()
         formData.append('profileImg', this.state.profileImg)
         formData.append('branch', this.state.branch)
@@ -94,7 +102,7 @@ class EditProfile extends Component {
         formData.append('skills', this.state.skills)
         formData.append('github', this.state.github)
         formData.append('intfeilds', this.state.intfeilds)
-
+        formData.append('uid', ls.get('uid'))
     console.log(formData);
 
     axios.put('http://localhost:8000/register/user-profile', formData)
@@ -102,7 +110,7 @@ class EditProfile extends Component {
         console.log(err)
       });
 
-    //window.location = '/home';
+    window.location = '/login';
   }
     render() {
         return (

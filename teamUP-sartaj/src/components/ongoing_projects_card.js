@@ -17,15 +17,14 @@ class Projects_Card extends Component {
         this.setState({show:!this.state.show})
     }
 
-    render() { 
-        return ( 
+    render() {
+        return (
                 <div className="projects_card">
                     <Card>
                         <Card.Body>
-                            <Card.Title>Card Title</Card.Title>
+                            <Card.Title>{this.props.project.name}</Card.Title>
                             <Card.Text>
-                            Some quick example text to build on the card title and make up the bulk of
-                            the card's content.
+                              {this.props.project.description}
                             </Card.Text>
                             <Button  onClick={this.handleModal} className="home_find_button">View Full Project</Button>
                         </Card.Body>
@@ -59,9 +58,9 @@ class Projects_Card extends Component {
                                 </Modal.Footer>
                             </Modal>
                     </Card>
-                </div> 
+                </div>
          );
     }
 }
- 
+
 export default Projects_Card;

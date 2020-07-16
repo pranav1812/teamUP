@@ -38,7 +38,9 @@ class Home extends Component {
       description: '',
       ispublic: true,
       mname: '',
-      role: ''
+      role: '',
+      projects: [],
+      projectid: ''
      }
   }
 
@@ -85,14 +87,14 @@ class Home extends Component {
   todolists=()=>{
     return(
       this.state.todolists.map(obj=>{
-        return <TileHomeToDo tod={obj} />
+        return <TileHomeToDo tod={obj}/>
       })
     )
   }
 
   componentDidMount(){
 
-    
+
     axios.post('http://localhost:8000/auth/me',{uid: ls.get('uid')})
       .then(res=>{
         console.log(res.data)
@@ -104,6 +106,12 @@ class Home extends Component {
     .then(response => {
       // console.log(response.data.profs)
     this.setState({ peoples: response.data.profs })
+
+    axios.post('http://localhost:8000/project/userprojects',{username: ls.get('username')})
+      .then(res=>{
+        this.setState({projects: res.data.projecs})
+      })
+      .catch(err=>console.error(err))
 
 
   })
@@ -123,7 +131,6 @@ class Home extends Component {
   }
   onSubmit(e){
     // e.preventDefault();
-    alert(69)
     const work = {
       tasks: this.state.todo
     }
@@ -154,25 +161,50 @@ class Home extends Component {
     }
     axios.post('http://localhost:8000/project/add', project).then(res => {
       console.log(res)
-    }).catch(err => {
-      console.log(err)
-    })
-
-    if(this.state.ispublic == true){
-      axios.post('http://localhost:8000/idea/add', project).then(res => {
+      this.setState({projectid: res.data.mem._id})
+      const update ={
+        projectid: this.state.projectid,
+        userid: ls.get('uid'),
+        name: ls.get('username'),
+        role: "leader"
+      }
+      alert(this.state.projectid)
+      //alert(this.state.mname)
+      axios.put('http://localhost:8000/project/add_member', update).then(res => {
         console.log(res)
       }).catch(err => {
         console.log(err)
       })
+
+      //console.log(this.state.projectid)
+    }).catch(err => {
+      console.log(err)
+    });
+
+    /*const update ={
+      projectid: this.state.projectid,
+      userid: ls.get('uid'),
+      name: ls.get('username'),
+      role: "leader"
     }
+    alert(this.state.projectid)
+    //alert(this.state.mname)
+    axios.put('http://localhost:8000/project/add_member', update).then(res => {
+      console.log(res)
+    }).catch(err => {
+      console.log(err)
+    })*/
+
+
   }
   addmember(){
     const update ={
+      projectid: this.state.projectid,
       name: this.state.mname,
       role: this.state.role
     }
-    alert(this.state.mname)
-    axios.put('http://localhost:8000/project/add_member', update).then(res => {
+    alert(this.state.projectid)
+    axios.put('http://localhost:8000/project/add_members', update).then(res => {
       console.log(res)
     }).catch(err => {
       console.log(err)
@@ -182,6 +214,11 @@ class Home extends Component {
   peopl(){
     return this.state.peoples.map(people => {
       return <TileFindHome people={people}/>
+    })
+  }
+  pros(){
+    return this.state.projects.map(project => {
+      return <Projects_Card project={project} />
     })
   }
 
@@ -270,10 +307,7 @@ class Home extends Component {
                             </Modal>
                         </div>
                         <div className="row">
-                            <Projects_Card />
-                            <Projects_Card />
-                            <Projects_Card />
-                            <Projects_Card />
+                          {this.pros()}
                         </div>
                     </div>
                 </div>
