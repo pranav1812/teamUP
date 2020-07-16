@@ -3,8 +3,31 @@ const {Discussion, Competition}= require('../models')
 
 const discussion= express.Router()
 
-discussion.get('/',(req, res)=>{
-    res.send('discussion page will be shown')
+
+discussion.get('/getAll',(req,res)=>{
+        console.log(69)
+        Discussion.find()
+            .then(allDis=>{
+                console.log(allDis)
+                res.send(allDis)
+            })
+            .catch(err=> console.error("some error occurred ")) 
+
+})
+
+discussion.get('/:id', async(req, res)=>{
+    var did= req.params.id
+    try {
+        var found= await Discussion.findOne({_id: did})
+        if(! found) return res.status(400).send('this discussion no longer exists or was never created')
+        res.send(found)
+    } 
+    catch (err) {
+        console.error(err)
+    }
+
+    
+    
 })
 
 discussion.post('/new', async(req, res)=>{

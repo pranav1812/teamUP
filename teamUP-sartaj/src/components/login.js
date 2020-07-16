@@ -112,12 +112,13 @@ class Login extends Component {
           this.props.add_uid(res.data.id)
           this.props.add_username(res.data.username)
           ls.set('uid', res.data.id )
+
           ls.set('username', res.data.username )
           window.location = '/home'
         }
         else{
           alert("wrong password")
-        }
+  }
         })
         .catch(err=> console.error(err))
 

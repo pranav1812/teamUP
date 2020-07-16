@@ -30,8 +30,8 @@ class NavigationBar extends Component {
                             <Link to="/findpeople"><Nav.Link href="#findpeople"><h6 className="navbar_text">FIND PEOPLE</h6></Nav.Link></Link>
                             <Link to="/idea"><Nav.Link href="#idea"><h6 className="navbar_text">IDEAS</h6></Nav.Link></Link>
                             <Link to="/competition"><Nav.Link href="#competition"><h6 className="navbar_text">COMPETITIONS</h6></Nav.Link></Link>
-                            <Link to="/competition"><Nav.Link href="#"><h6 className="navbar_text">DISCUSSION FORUM</h6></Nav.Link></Link>
-                            <Link to="/competition"><Nav.Link href="#"><h6 className="navbar_text">ABOUT US</h6></Nav.Link></Link>
+                            <Link to="/discussion"><Nav.Link href="#discussion"><h6 className="navbar_text">DISCUSSION FORUM</h6></Nav.Link></Link>
+                            <Link to="/about"><Nav.Link href="#"><h6 className="navbar_text">ABOUT US</h6></Nav.Link></Link>
                         </Nav>
                         <Form inline>
                             <i className="nav-icon"  onClick={this.handleModal}><FaPlus /></i>
