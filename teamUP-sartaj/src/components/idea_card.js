@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import {Card,Button,Modal} from 'react-bootstrap';
-
+import axios from "axios"
 class Idea_Card extends Component {
     constructor()
     {
         super();
         this.handleModal = this.handleModal.bind(this);
         this.state={
-            show:false
+            show:false,
+            project: ''
         }
 
     }
@@ -17,18 +18,31 @@ class Idea_Card extends Component {
         this.setState({show:!this.state.show})
     }
 
-    render() { 
-        return ( 
+    proje=(n)=>{
+      const stat={
+        userid: n
+      }
+      axios.post("http://localhost:8000/project/findproject", stat).then(res=>{
+        console.log(res.data)
+        this.setState({project: res.data.project})
+      }).catch(err=>{
+        console.log(err)
+      })
+    }
+
+
+    render() {
+      console.log(this.state)
+        return (
             <div>
                 <div className="find_tile">
                     <Card className="find_card">
                         <Card.Body>
-                            <Card.Title>Card Title</Card.Title>
+                            <Card.Title>{this.props.proj.name}</Card.Title>
                             <Card.Text>
-                            Some quick example text to build on the card title and make up the bulk of
-                            the card's content.
+                              {this.props.proj.description}
                             </Card.Text>
-                            <Button className="home_find_button"  onClick={this.handleModal}>View Full Idea</Button>
+                            <Button className="home_find_button"  onClick={()=>{this.handleModal(); this.proje(this.props.proj._id);}}>View Full Idea</Button>
                         </Card.Body>
                     </Card>
                     <Modal show={this.state.show} onHide={()=>this.handleModal()}>
@@ -40,15 +54,17 @@ class Idea_Card extends Component {
                                     <div>
                                         <div className="row">
                                             <h6 className="col-3">Name: </h6>
-                                            <p>ibIdvywvfj</p>
+                                            <p>{this.state.project.name}</p>
                                         </div>
                                         <div className="row">
                                             <h6 className="col-3">Created By: </h6>
-                                            <p>ibIdvywvfj</p>
+                                            <p>{/*this.state.project.members.map(pro=>{
+                                              return pro.name
+                                            })*/}</p>
                                         </div>
                                         <div className="row">
                                             <h6 className="col-3">Description: </h6>
-                                            <p>lsnnnKKBFkbiBKNDoBBEEIK NEKB  oibwirg BFHAIV</p>
+                                            <p>{this.state.project.description}</p>
                                         </div>
                                         <div className="row">
                                             <h6 className="col-3">Current Members: </h6>
@@ -65,5 +81,5 @@ class Idea_Card extends Component {
          );
     }
 }
- 
+
 export default Idea_Card;

@@ -92,7 +92,7 @@ class Login extends Component {
           console.log(err);
         });
 
-        // window.location = '/editprofile';
+         window.location = '/';
     }
 
     onSubmitlogin(e) {
@@ -111,12 +111,14 @@ class Login extends Component {
           this.props.add_uid(res.data.id)
           this.props.add_username(res.data.username)
           ls.set('uid', res.data.id )
+
           ls.set('username', res.data.username)
+
           window.location = '/home';
         })
         .catch(err=> console.error(err))
 
-      
+
     }
 
 

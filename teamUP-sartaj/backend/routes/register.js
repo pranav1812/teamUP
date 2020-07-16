@@ -74,7 +74,7 @@ let multer = require('multer'),
 const register= express.Router()
 var idi;
 const authmdw  = require('../middleware/authmdw')
-
+var x;
 register.get('/getprof',(req,res)=>{
   User.find().then(data => {
       res.status(200).json({
@@ -190,8 +190,9 @@ register.put('/user-profile', upload.single('profileImg'), (req, res, next) => {
   console.log("profile is listening")
     const url = req.protocol + '://' + req.get('host');
     //idimage = new mongoose.Types.ObjectId();
+    x=req.body.uid
     console.log(req.body.intfeilds)
-    User.findByIdAndUpdate( "5f094de7c30b346650d86cc0" ,
+    User.findByIdAndUpdate( req.body.uid ,
     {
       skills: req.body.skills,
       githubprofile: req.body.github,
@@ -260,11 +261,20 @@ register.put('/user-profile', upload.single('profileImg'), (req, res, next) => {
 //});
 
 
-register.get("/getprofile", (req, res, next) => {
-    User.findOne({_id: "5f094de7c30b346650d86cc0"}).then(data => {
+register.post("/getprofile", (req, res, next) => {
+    User.findOne({_id: req.body.uid}).then(data => {
         res.status(200).json({
             profile: data,
             profileImg: data.profileImg
+        });
+    });
+});
+
+register.post("/finduser", (req, res, next) => {
+    User.findOne({_id: req.body.userid}).then(data => {
+        res.status(200).json({
+            profile: data
+            //profileImg: data.profileImg
         });
     });
 });
