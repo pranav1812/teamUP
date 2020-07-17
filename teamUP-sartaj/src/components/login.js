@@ -191,7 +191,7 @@ class Login extends Component {
                         <Button onClick={this.toggleState} className="login_button" type="button">
                             Cancel
                         </Button>
-                        <Form.Label  className="login_text_link" >Already a user, <Button onClick={this.toggleState} className="signup_button" type="button">Sign Up</Button></Form.Label>
+                        <Form.Label  className="login_text_link" >New User, <Button onClick={this.toggleState} className="signup_button" type="button">Sign Up</Button></Form.Label>
                     </div>
                 </Form>
             </div>

@@ -110,7 +110,7 @@ class EditProfile extends Component {
         console.log(err)
       });
 
-    window.location = '/login';
+    window.location = '/home';
   }
     render() {
         return (
