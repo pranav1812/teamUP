@@ -15,6 +15,7 @@ class EditProfile extends Component {
     this.onChangeGithub = this.onChangeGithub.bind(this);
     this.onChangeIntfeilds = this.onChangeIntfeilds.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+    this.toggleState = this.toggleState.bind(this);
 
     this.state = {
       profileImg: '',
@@ -22,8 +23,15 @@ class EditProfile extends Component {
       tellus: '',
       skills: '',
       github: '',
-      intfeilds: []
+      intfeilds: [],
+      toggle: false
     }
+  }
+
+  toggleState() {
+    this.setState({
+      toggle:!this.state.toggle}
+      )
   }
 
   /*componentDidMount() {

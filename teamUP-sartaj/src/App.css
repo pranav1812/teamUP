@@ -271,18 +271,21 @@ footer i {
     padding: 0px 6px;
 }
 
+.ongoing_projects_btn {
+    margin-top: 60px;
+}
+
 /*-----------------------*/
 
 .home_tile_find {
     padding:0px 10px;
     margin-left: 27px;
+    text-align: center;
 }
 
 .find_tile_img {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    padding: 10px;
+   height:100px;
+   padding-bottom: 0px;
 }
 
 @media (max-width:576px)
@@ -428,10 +431,32 @@ footer i {
     width: 200px;
     margin: 12px;
     height: 240px;
+    text-align: center;
 }
 
 .grid4 {
     padding:0px 50px;
+}
+
+.members {
+    background-color: #17252a;
+    color: #def2f1;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 3px;
+}
+
+.member_button {
+    border:none;
+    color:#17252a;
+    background-color: #def2f1;
+    border-radius: 20px;
+    font-weight: bold;
+    padding: 0px 10px 0px 10px;
+}
+
+.member_button:hover {
+    background-color: #3aafa9;
 }
 
 /*--------Project-----------------*/

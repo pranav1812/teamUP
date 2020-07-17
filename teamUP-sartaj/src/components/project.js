@@ -3,6 +3,7 @@ import Navbar from './navbar';
 import Project_Card from './project_card';
 import Project_Todo from './project_todo';
 import Project_Chat from './project_chat';
+import Footer from './footer';
 
 class Project extends Component {
     state = {  }
@@ -12,7 +13,8 @@ class Project extends Component {
                 <Navbar />
                 <div className="project">
                     <div className="row">
-                        <h4 className="col-12 project_heading">Name of the Project</h4>
+                        <h4 className="col-11 project_heading">Name of the Project</h4>
+                        
                     </div>
                     <div className="row">
                         <div className="col-12 col-md-3 mb-3">
@@ -26,6 +28,7 @@ class Project extends Component {
                         </div>
                     </div>
                 </div>
+                <Footer />
             </div>
          );
     }
