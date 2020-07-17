@@ -91,7 +91,7 @@ todo.put('/groupToDo/update_status', async(req, res)=>{
     }
 })
 todo.get("/myTodo", (req, res) => {
-  //console.log("drftyguhijokojihugyf");
+  
     var list= PersonalToDo.findOne({uid: "5f094de7c30b346650d86cc0"}).then(data => {
       /*data.tasks.forEach(obj => {
         console.log(obj)
