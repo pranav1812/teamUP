@@ -19,8 +19,8 @@ class Projects_Card extends Component {
 
     render() {
         return (
-                <div className="projects_card">
-                    <Card>
+                <div>
+                    <Card className="projects_card">
                         <Card.Body>
                             <Card.Title>{this.props.project.name}</Card.Title>
                             <Card.Text>
@@ -46,9 +46,6 @@ class Projects_Card extends Component {
                                         <div className="row">
                                             <h6 className="col-3">Description: </h6>
                                             <p>lsnnnKKBFkbiBKNDoBBEEIK NEKB  oibwirg BFHAIV</p>
-                                        </div>
-                                        <div className="row">
-                                            <h6 className="col-3">Current Members: </h6>
                                         </div>
                                     </div>
                                 </Modal.Body>

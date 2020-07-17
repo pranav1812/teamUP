@@ -83,9 +83,6 @@ class FindTile extends Component {
                                             <h6 className="col-3">E-Mail: </h6>
                                             <p>{this.state.profile.mail}</p>
                                         </div>
-                                        <div className="row">
-                                            <h6 className="col-3">Projects: </h6>
-                                        </div>
                                     </div>
                                 </Modal.Body>
                                 <Modal.Footer className="modal_header">
