@@ -13,7 +13,7 @@ class Discussion_Cards extends Component {
             <div className="container discussion">
                 <div className="row">
                     <h3 className="col-6 col-sm-9">{title}</h3>
-                    <Link to={linkTo}><Button className="col-4 col-sm-2" id="discussion_btn">Join Discussion</Button></Link>
+                    <Button className="col-4 col-sm-2" id="discussion_btn"><Link id="discussion_btn_text" to={linkTo}>Join Discussion</Link></Button>
                     
                 </div>
                 <p>{des}</p>
