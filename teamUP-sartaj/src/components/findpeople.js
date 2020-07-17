@@ -4,7 +4,7 @@ import FindTile from './find_tiles';
 import FindNav from './find_nav';
 import Footer from './footer';
 import axios from 'axios';
-
+import ls from 'local-storage'
 class Find extends Component {
     constructor(props){
       super(props);
@@ -15,7 +15,7 @@ class Find extends Component {
     }
 
     componentDidMount(){
-      axios.get('http://localhost:8000/register/getprof')
+      axios.post('http://localhost:8000/register/getprof',{uid: ls.get('uid')})
       .then(response => {
         console.log(response.data.profs)
       this.setState({ peoples: response.data.profs })
