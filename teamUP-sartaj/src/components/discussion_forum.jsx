@@ -95,7 +95,7 @@ class Discussion_Forum extends Component {
                     this.state.allDis?
                         this.state.allDis.map(obj=>(
                             
-                            <Discussion_Card des= {obj.brief} title={obj.title} upvotes={obj.upvotes} id={obj._id} msg={obj.discussion[0] ? obj.discussion[1]: {sender:'x', message: '69'}} msgg={obj.discussion[1] ? obj.discussion[1]: {sender:'x', message: '69'}}/>
+                            <Discussion_Card des= {obj.brief} title={obj.title} upvotes={obj.upvotes} id={obj._id} msg={obj.discussion[0] ? obj.discussion[0]: {sender:'_', message: 'Kindly join discussion to add a comment'}} msgg={obj.discussion[1] ? obj.discussion[1]: {sender:'_', message: 'Kindly join discussion to add a comment'}}/>
                             )): null
                 }
                 

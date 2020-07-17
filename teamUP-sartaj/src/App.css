@@ -286,6 +286,7 @@ footer i {
 .find_tile_img {
    height:100px;
    padding-bottom: 0px;
+   border-radius: 20px 20px 0px 0px;
 }
 
 @media (max-width:576px)
@@ -309,15 +310,20 @@ footer i {
     padding-top: 40px;
 }
 
-.find_tile {
+.find_tile,.idea_tile {
     margin: 20px;
+    text-align: center;
 }
 
-.find_card {
+.find_card,.idea_card {
     height: 300px;
     border-radius: 20px;
     background-color: #3aafa9;
     box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.idea_card {
+    height:200px;
 }
 
 #dropdown-item-button {

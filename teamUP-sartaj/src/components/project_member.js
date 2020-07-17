@@ -30,6 +30,8 @@ class Members extends Component {
                                     <div>
                                         <div className="row">
                                             <h6 className="col-4">Rate Member: </h6>
+                                            <input className="col-2" placeholder="Rate"></input>
+                                            <h6 className="col"> /5</h6>
                                         </div>
                                     </div>
                                 </Modal.Body>
