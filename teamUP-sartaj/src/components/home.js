@@ -94,7 +94,7 @@ class Home extends Component {
 
   componentDidMount(){
 
-
+    alert(ls.get('username'))
     axios.post('http://localhost:8000/auth/me',{uid: ls.get('uid')})
       .then(res=>{
         console.log(res.data)
