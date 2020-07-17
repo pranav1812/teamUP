@@ -40,7 +40,7 @@ class FindTile extends Component {
                         <Card.Body>
                             <Card.Title>{this.props.people.name}</Card.Title>
                             <Card.Text>
-                               {this.props.people.tellus? this.props.people.tellus.substring(0,40) : null}...
+                                {this.props.people.tellus? this.props.people.tellus.substring(0,60) : null}...
                             </Card.Text>
                             <Button className="home_find_button" onClick={()=>{this.handleModal(); this.finduser(this.props.people._id);}}>View Full Profile</Button>
                             <Modal show={this.state.show} onHide={()=>this.handleModal()}>
@@ -82,9 +82,6 @@ class FindTile extends Component {
                                         <div className="row">
                                             <h6 className="col-3">E-Mail: </h6>
                                             <p>{this.state.profile.mail}</p>
-                                        </div>
-                                        <div className="row">
-                                            <h6 className="col-3">Projects: </h6>
                                         </div>
                                     </div>
                                 </Modal.Body>

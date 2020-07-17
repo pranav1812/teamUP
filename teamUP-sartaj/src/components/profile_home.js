@@ -25,29 +25,30 @@ class Profile extends Component {
 
     render() {
         return (
-            <div>
-                <div className="profile">
+            <div className="container">
+                <div className="profile col-12">
                     <img className="profile_img" src={this.state.profileImg} alt="abc" />
                     <div className="profile_text">
                         <h2>{this.state.profile.name}</h2>
                         <h3>{this.state.profile.username}</h3>
-                        <h6>{this.state.profile.tellus}</h6>
+                        <div className="row">
+                          <div className="col-12">
+                            <p>{this.state.profile.tellus}</p>
+                          </div>
+                        </div>
                         <div className="row mt-5">
                             <div className="col-6 mt-4">
                                 <h6>Mobile No: {this.state.profile.phone}</h6>
                                 <h6>E-Mail: {this.state.profile.mail}</h6>
                                 <h6>Skills: {this.state.profile.skills}
                                 </h6>
+                                <h6>Git-Hub Profile: {this.state.profile.githubprofile}</h6>
                             </div>
                             <div className="col-6">
-                                <h5>COMPLETED PROJECTS</h5>
-                                <li>Project 1</li>
-                                <li>Project 1</li>
-                                <li>Project 1</li>
-                                <li>Project 1</li>
+                                <h5>FIELDS INTERESTED IN</h5>
+                                <h6>{this.state.profile.interestedfeilds}</h6>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>

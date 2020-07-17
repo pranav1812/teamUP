@@ -66,9 +66,6 @@ class Idea_Card extends Component {
                                             <h6 className="col-3">Description: </h6>
                                             <p>{this.state.project.description}</p>
                                         </div>
-                                        <div className="row">
-                                            <h6 className="col-3">Current Members: </h6>
-                                        </div>
                                     </div>
                                 </Modal.Body>
                                 <Modal.Footer className="modal_header">

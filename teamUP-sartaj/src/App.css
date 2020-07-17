@@ -145,6 +145,7 @@ footer i {
 
 .grid1 {
     height: 700px;
+    overflow-x: hidden;
 }
 
 .grid2 {
@@ -281,6 +282,7 @@ footer i {
     width: 60px;
     height: 60px;
     border-radius: 50%;
+    padding: 10px;
 }
 
 @media (max-width:576px)
@@ -425,6 +427,7 @@ footer i {
     background-color: #def2f1;
     width: 200px;
     margin: 12px;
+    height: 240px;
 }
 
 .grid4 {
@@ -529,6 +532,11 @@ footer i {
     color:#def2f1;
     border-radius: 20px;
     padding:10px;
+}
+
+#discussion_btn_text {
+    color: #def2f1;
+    text-decoration: none;
 }
 
 .comment {

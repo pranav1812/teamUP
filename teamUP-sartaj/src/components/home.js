@@ -98,6 +98,7 @@ class Home extends Component {
     axios.post('http://localhost:8000/auth/me',{uid: ls.get('uid')})
       .then(res=>{
         console.log(res.data)
+        alert(res.data)
       })
       .catch(err=>console.error(err))
 
