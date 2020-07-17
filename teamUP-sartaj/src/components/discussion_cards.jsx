@@ -1,21 +1,27 @@
 import React, { Component } from 'react';
 import { Button } from 'react-bootstrap';
 import Comment from './comment';
+import {Link} from 'react-router-dom'
+
 
 class Discussion_Cards extends Component {
     state = {  }
     render() { 
+        var {des, title, upvotes, id, msg, msgg}= this.props
+        var linkTo= "/topic/"+id
         return ( 
             <div className="container discussion">
                 <div className="row">
-                    <h3 className="col-6 col-sm-9">Topic of Discussion</h3>
-                    <Button className="col-4 col-sm-2" id="discussion_btn">Join Discussion</Button>
+                    <h3 className="col-6 col-sm-9">{title}</h3>
+                    <Link to={linkTo}><Button className="col-4 col-sm-2" id="discussion_btn">Join Discussion</Button></Link>
+                    
                 </div>
-                <p>description nsljfhoahv; oia vh  v khwa lhwawebf fkbkevfatt bfkfabw</p>
-                <h4>Number of People Involved in the discussion</h4>
-                <h4>Top Comments: </h4>
-                <Comment />
-                <Comment />
+                <p>{des}</p>
+                <h4>upvotes: {upvotes}</h4>
+                <Comment from={msg.sender} msg={msg.message} />
+                <Comment from={msgg.sender} msg={msgg.message} />
+               
+                
             </div>
          );
     }

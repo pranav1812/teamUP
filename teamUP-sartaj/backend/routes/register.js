@@ -75,12 +75,21 @@ const register= express.Router()
 var idi;
 const authmdw  = require('../middleware/authmdw')
 var x;
-register.get('/getprof',(req,res)=>{
+register.post('/getprof',(req,res)=>{
+  var uid=req.body.uid
+  var a=[]
   User.find().then(data => {
+    data.map(da=>{
+      if(da._id != uid){
+        a.push(da)
+      }
+    })
       res.status(200).json({
-          profs: data
+          profs: a
       });
-  });
+  }).catch(err=>{
+    console.log(err)
+  })
 })
 /*register.route('/add').post((req, res) => {
   const name = req.body.name;

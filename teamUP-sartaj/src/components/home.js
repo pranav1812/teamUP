@@ -102,7 +102,7 @@ class Home extends Component {
       })
       .catch(err=>console.error(err))
 
-    axios.get('http://localhost:8000/register/getprof')
+    axios.post('http://localhost:8000/register/getprof', {uid: ls.get('uid')})
     .then(response => {
       // console.log(response.data.profs)
     this.setState({ peoples: response.data.profs })

@@ -36,7 +36,7 @@ ReactDOM.render(<Provider store={store} >
     <Route path="/project" component={Project} exact/>
 
     <Route path="/discussion" component={Discussion_Forum} exact/>
-    <Route path="/topic" component={Topic} exact/>
+    <Route path="/topic" component={Topic} />
   </Router> </Provider>,
 
    
