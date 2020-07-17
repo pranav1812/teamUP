@@ -15,7 +15,7 @@ class FindNav extends Component {
     filter=()=>{
                
         ls.set("people_filter", this.state.ppf)     
-        alert(ls.get("people_filter"))  
+        window.location.reload()
     }
     render() { 
         return (            

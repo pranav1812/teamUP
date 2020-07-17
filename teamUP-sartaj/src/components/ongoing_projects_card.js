@@ -26,7 +26,7 @@ class Projects_Card extends Component {
                             <Card.Text>
                               {this.props.project.description}
                             </Card.Text>
-                            <Button  onClick={this.handleModal} className="home_find_button">View Full Project</Button>
+                            <Button  onClick={this.handleModal} className="home_find_button ongoing_projects_btn">View Full Project</Button>
                         </Card.Body>
                         <Modal show={this.state.show} onHide={()=>this.handleModal()}>
                                 <Modal.Header  className="modal_header">
