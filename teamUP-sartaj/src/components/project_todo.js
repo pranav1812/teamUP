@@ -19,6 +19,8 @@ class Project_Todo extends Component {
                     </div>
                     
                     <Project_Todo_list />
+                    <Project_Todo_list />
+                    <Project_Todo_list />
                                
                 </div>
             </div>
