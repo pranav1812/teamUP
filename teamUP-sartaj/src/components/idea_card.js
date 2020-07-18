@@ -58,7 +58,19 @@ class Idea_Card extends Component {
                                         </div>
                                         <div className="row">
                                             <h6 className="col-3">Created By: </h6>
-                                            <p></p>
+                                            <p>sartaj</p>
+                                        </div>
+                                        <div className="row">
+                                            <h6 className="col-3">phone: </h6>
+                                            <p>7009395378</p>
+                                        </div>
+                                        <div className="row">
+                                            <h6 className="col-3">mail: </h6>
+                                            <p>sartaj@thapar.edu</p>
+                                        </div>
+                                        <div className="row">
+                                            <h6 className="col-3">github: </h6>
+                                            <p><a href="https://github.com/sartajsehgal">click to see </a></p>
                                         </div>
                                         <div className="row">
                                             <h6 className="col-3">Description: </h6>
