@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import Talk from 'talkjs';
+import ls from 'local-storage'
 
 export default class Chat extends Component {
 
@@ -16,27 +17,41 @@ export default class Chat extends Component {
             .then(() => {
                 const me = new Talk.User({
                     id: "12345231",
-                    name: "George Looney",
-                    email: "george@looney.net",
+                    name: "sparsh",
+                    email: "sparsh@thapar.edu",
                     photoUrl: "https://talkjs.com/docs/img/george.jpg",
                     welcomeMessage: "Hey there! How are you? :-)"
                 });
 
                 const other = new Talk.User({
                     id: "54321",
-                    name: "Ronald Raygun",
-                    email: "ronald@teflon.com",
+                    name: "sartaj",
+                    email: "sartaj@thapar.edu",
                     photoUrl: "https://talkjs.com/docs/img/ronald.jpg",
                     welcomeMessage: "Hey there! Love to chat :-)"
                 });
 
+                console.log(this.props.id)
 
+                if(ls.get('uid') == "5f12d95936a5050ffe3646b8")
+                {
+
+
+                if (!window.talkSession) {
+                    window.talkSession = new Talk.Session({
+                        appId: "tmnOoRS4",
+                        me: me
+                    });
+                }
+              }
+              else{
                 if (!window.talkSession) {
                     window.talkSession = new Talk.Session({
                         appId: "tmnOoRS4",
                         me: other
                     });
                 }
+              }
 
                 /*const other = new Talk.User({
                     id: "54321",
