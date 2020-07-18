@@ -35,8 +35,8 @@ class Idea_Card extends Component {
       console.log(this.state)
         return (
             <div>
-                <div className="find_tile">
-                    <Card className="find_card">
+                <div className="idea_tile">
+                    <Card className="idea_card">
                         <Card.Body>
                             <Card.Title>{this.props.proj.name}</Card.Title>
                             <Card.Text>
@@ -58,7 +58,7 @@ class Idea_Card extends Component {
                                         </div>
                                         <div className="row">
                                             <h6 className="col-3">Created By: </h6>
-                                            <p>{this.props.proj.members}</p>
+                                            <p></p>
                                         </div>
                                         <div className="row">
                                             <h6 className="col-3">Description: </h6>

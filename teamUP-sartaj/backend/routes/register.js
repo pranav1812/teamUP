@@ -77,19 +77,26 @@ const authmdw  = require('../middleware/authmdw')
 var x;
 register.post('/getprof',(req,res)=>{
   var uid=req.body.uid
-  var a=[]
+
+
+  
+    var a=[]
   User.find().then(data => {
     data.map(da=>{
       if(da._id != uid){
         a.push(da)
       }
     })
+    console.log(a)
       res.status(200).json({
           profs: a
       });
   }).catch(err=>{
     console.log(err)
   })
+  
+  
+  
 })
 /*register.route('/add').post((req, res) => {
   const name = req.body.name;

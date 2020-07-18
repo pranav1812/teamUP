@@ -94,11 +94,9 @@ class Home extends Component {
 
   componentDidMount(){
 
-
     axios.post('http://localhost:8000/auth/me',{uid: ls.get('uid')})
       .then(res=>{
         console.log(res.data)
-        alert(res.data)
       })
       .catch(err=>console.error(err))
 
@@ -146,7 +144,6 @@ class Home extends Component {
         todolists: response
       })
       console.log(response)
-      alert(JSON.stringify(this.state.todolists))
     }).catch(err => {
       console.log(err)
     })
@@ -170,7 +167,6 @@ class Home extends Component {
         name: ls.get('username'),
         role: "leader"
       }
-      alert(this.state.projectid)
       //alert(this.state.mname)
       axios.put('http://localhost:8000/project/add_member', update).then(res => {
         console.log(res)
@@ -205,7 +201,6 @@ class Home extends Component {
       name: this.state.mname,
       role: this.state.role
     }
-    alert(this.state.projectid)
     axios.put('http://localhost:8000/project/add_members', update).then(res => {
       console.log(res)
     }).catch(err => {

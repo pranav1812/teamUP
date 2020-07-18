@@ -96,13 +96,13 @@ todo.put('/groupToDo/update_status', async(req, res)=>{
         console.log(err)
     }
 })
-todo.put("/myTodo", (req, res) => {
+/*todo.put("/myTodo", (req, res) => {
   //console.log("drftyguhijokojihugyf");
   try{
     var list= PersonalToDo.findOne({uid: req.body.uid}).then(data => {
       /*data.tasks.forEach(obj => {
         console.log(obj)
-      })*/try{
+      })*//*try{
       if(data.tasks.length() != 0)
       {
       var x = data.tasks.filter(obj=> obj.status== "pending")
@@ -126,6 +126,6 @@ todo.put("/myTodo", (req, res) => {
   catch(err){
       console.log(err)
   }
-});
+});*/
 
 module.exports= todo

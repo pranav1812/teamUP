@@ -15,10 +15,26 @@ class Find extends Component {
     }
 
     componentDidMount(){
+     // ls.remove('people_filter')
       axios.post('http://localhost:8000/register/getprof',{uid: ls.get('uid')})
       .then(response => {
         console.log(response.data.profs)
-      this.setState({ peoples: response.data.profs })
+        var filtered =[]
+        if(ls.get('people_filter')!=''){
+          response.data.profs.map(obj=>{
+            try {
+              if(obj.interestedfeilds.toLowerCase().includes(ls.get('people_filter')) )
+              filtered.push(obj)
+            } catch (err) {
+              console.error(err)
+            }
+
+          })
+        } else{
+          filtered= response.data.profs
+        }
+
+      this.setState({ peoples: filtered })
 
     })
     .catch((error) => {

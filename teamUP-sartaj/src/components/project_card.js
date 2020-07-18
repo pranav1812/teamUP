@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {MdModeEdit} from 'react-icons/md'
+import Members from './project_member';
 
 /*const Member = props => (
   <h6>{props.memb.name}</h6>
@@ -20,6 +21,7 @@ class Project_Card extends Component {
             <div>
                 <div className="project_card  project_info">
                     <div className="row mr-0">
+
                             <h4 className="card_heading col-10">PROJECT INFO</h4>
                             <button className="card_heading_btn col-1 m-2"><MdModeEdit /></button>
                         </div>
@@ -36,6 +38,7 @@ class Project_Card extends Component {
                                 <h6>Git-Hub Repository: jhckuuh;vw</h6>
                             </div>
                 </div>
+
             </div>
         );
     }

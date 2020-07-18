@@ -10,7 +10,6 @@ class Project_Todo_list extends Component {
                  </div>
                  <div className="col-3 ml-0">
                      <button className="tile_home_button " type="button">Done</button>
-                     <button className="tile_home_button ml-2 X" type="button">X</button>
                  </div>
             </div>
           );

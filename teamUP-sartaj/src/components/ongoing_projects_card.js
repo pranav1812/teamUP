@@ -47,6 +47,7 @@ class Projects_Card extends Component {
                               {this.props.project.description}
                             </Card.Text>
                             <Button className="home_find_button"><Link to={"/project/" + this.props.project._id} params={{ detail: this.props.project._id }}>View Full Project</Link></Button>
+
                         </Card.Body>
                         <Modal show={this.state.show} onHide={()=>this.handleModal()}>
                                 <Modal.Header  className="modal_header">

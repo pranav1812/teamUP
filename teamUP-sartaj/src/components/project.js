@@ -3,7 +3,10 @@ import Navbar from './navbar';
 import Project_Card from './project_card';
 import Project_Todo from './project_todo';
 import Project_Chat from './project_chat';
+
 import axios from 'axios';
+
+import Footer from './footer';
 
 class Project extends Component {
     constructor(props){
@@ -30,6 +33,7 @@ class Project extends Component {
                 <div className="project">
                     <div className="row">
                         <h4 className="col-12 project_heading">{this.state.project.name}</h4>
+
                     </div>
                     <div className="row">
                         <div className="col-12 col-md-3 mb-3">
@@ -43,6 +47,7 @@ class Project extends Component {
                         </div>
                     </div>
                 </div>
+                <Footer />
             </div>
          );
     }
