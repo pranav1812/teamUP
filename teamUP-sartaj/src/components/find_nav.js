@@ -20,8 +20,8 @@ class FindNav extends Component {
     render() { 
         return (            
         <div>        
-            <input onBlur={this.setFilter} />
-            <button onClick={this.filter} >Filter</button>           
+            <input className="find_input" onBlur={this.setFilter} />
+            <button  className="find_input_btn" onClick={this.filter} >Filter</button>           
         </div>
          );
     }

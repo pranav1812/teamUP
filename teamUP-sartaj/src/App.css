@@ -320,6 +320,29 @@ footer i {
     border-radius: 20px;
     background-color: #3aafa9;
     box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+}
+
+.find_input {
+    margin-left: 20%;
+    margin-top:20px;
+    border:none;
+    border-radius: 10px 0px 0px 10px;
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.find_input_btn {
+    border:none;
+    background-color: #17252a;
+    color: #def2f1;
+    border-radius: 0px 10px 10px 0px;
+    padding:0px 10px;
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.find_input_btn:hover {
+    background-color: #3aafa9;
+    color:#def2f1;
 }
 
 .idea_card {
