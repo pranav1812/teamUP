@@ -11,7 +11,7 @@ class Topic extends Component {
     state = {  }
 
     componentDidMount(){
-        
+
         var loc=window.location.href.split('/')
         var did=loc[loc.length-1]
         this.setState({
@@ -22,7 +22,7 @@ class Topic extends Component {
         axios.get(url)
             .then(res=>{
                 this.setState({
-                    dis: res.data 
+                    dis: res.data
                 })
                 console.log(this.state.dis)
             })
@@ -32,7 +32,7 @@ class Topic extends Component {
         this.setState({
             ... this.state,
             temCom: e.target.value,
-            
+
         })
     }
     addComment=()=>{
@@ -42,7 +42,7 @@ class Topic extends Component {
                 senderUid: ls.get('uid'),
                 sender: ls.get('username')
             },
-            
+
             did: this.state.did
         }
         axios.put('http://localhost:8000/discussion/participate', comment)
@@ -64,8 +64,8 @@ class Topic extends Component {
             .catch(err=>console.error(err))
     }
 
-    render() { 
-        return ( 
+    render() {
+        return (
             <div className="discussion_topic">
                 <Navbar />
                 <div className="container topic">
@@ -73,7 +73,7 @@ class Topic extends Component {
                         <h3 className="col-10">{this.state.dis? this.state.dis.title: '' }</h3>
                         <i className="topic_icons" onClick={()=>this.vote('up')} ><FaArrowAltCircleUp /></i>
                         <i className="topic_icons" onClick={()=>this.vote('down')} ><FaArrowAltCircleDown /></i>
-                        <i className="topic_icons"><FaBookmark /></i>
+                        
                     </div>
                     <p>{this.state.dis? this.state.dis.brief: ''}</p>
                     <h4>Upvotes: {this.state.dis? this.state.dis.upvotes: ''}</h4>
@@ -85,20 +85,20 @@ class Topic extends Component {
                     </div>
                     {
                         this.state.dis?
-                            
+
                             this.state.dis.discussion.map(obj=> (
                                 <Comment from= {obj.sender} msg= {obj.message} />
-                                
+
                             ))
                             : null
                     }
-                    
-                    
+
+
                 </div>
                 <Footer />
             </div>
          );
     }
 }
- 
+
 export default Topic;

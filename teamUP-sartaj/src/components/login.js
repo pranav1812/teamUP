@@ -77,17 +77,8 @@ class Login extends Component {
       axios.post('http://localhost:8000/register/create', signup)
         .then(res => {
           console.log(res.data)
-          var personalToDo={
-            uid: res.data._id,
-            member: res.data.username
-          }
-
-          axios.post('http://localhost:8000/todo//personalToDo/create', personalToDo)
-            .then(res=>{
-              console.log(res.data)
-            })
-            .catch(err=> console.error(err))
         })
+
         .catch(err => {
           console.log(err);
         });
@@ -114,6 +105,18 @@ class Login extends Component {
           ls.set('uid', res.data.id )
 
           ls.set('username', res.data.username )
+
+          /*var personalToDo={
+            uid: ls.get('uid'),
+            member: res.data.username
+          }
+
+          axios.post('http://localhost:8000/todo//personalToDo/create', personalToDo)
+            .then(res=>{
+              console.log(res.data)
+            })
+            .catch(err=> console.error(err))
+*/
           window.location = '/home'
         }
         else{

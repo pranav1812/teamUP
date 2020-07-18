@@ -47,7 +47,7 @@ class Idea_Card extends Component {
                     </Card>
                     <Modal show={this.state.show} onHide={()=>this.handleModal()}>
                                 <Modal.Header  className="modal_header">
-                                    <h2>Name</h2>
+                                    <h2>{this.props.proj.name}</h2>
                                     <span className="close-modal-btn" onClick={this.handleModal}>x</span>
                                 </Modal.Header>
                                 <Modal.Body  className="modal_body">
@@ -58,9 +58,7 @@ class Idea_Card extends Component {
                                         </div>
                                         <div className="row">
                                             <h6 className="col-3">Created By: </h6>
-                                            <p>{/*this.state.project.members.map(pro=>{
-                                              return pro.name
-                                            })*/}</p>
+                                            <p>{this.props.proj.members}</p>
                                         </div>
                                         <div className="row">
                                             <h6 className="col-3">Description: </h6>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import ls from 'local-storage'
 class TileHomeToDO extends Component {
     constructor(props){
       super(props);
@@ -10,6 +11,7 @@ class TileHomeToDO extends Component {
     done=(n)=>{
       this.setState({status: 'done'})
       const status={
+        uid: ls.get('uid'),
         status: this.state.status,
         tid: n
       }

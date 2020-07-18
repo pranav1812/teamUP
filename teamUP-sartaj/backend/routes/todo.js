@@ -9,7 +9,13 @@ todo.post('/personalToDo/create', async(req, res)=>{
 */
     try{
     console.log(req.body)
-        var list= new PersonalToDo(req.body)
+        var list= new PersonalToDo({
+          uid: req.body.uid,
+          member: req.body.member
+        })
+        var data= await list.save()
+        var list= await PersonalToDo.findOne({uid: req.body.uid}).exec()
+        list.tasks.push("welcome")
         var data= await list.save()
         res.send(`saved your todo list. \n ${data}`)
    }
@@ -39,7 +45,7 @@ todo.post('/groupToDo/create', async(req, res)=>{
 
 todo.put('/personalToDo/add', async(req, res)=>{
     try{
-        var list= await PersonalToDo.findOne({uid: "5f094de7c30b346650d86cc0"}).exec()
+        var list= await PersonalToDo.findOne({uid: req.body.uid}).exec()
         list.tasks.push(req.body.tasks)
         var newList= await list.save()
         res.send(`updated, your new todo list looks like \n ${newList}`)
@@ -64,7 +70,7 @@ todo.put('/groupToDo/add', async(req, res)=>{
 
 todo.put('/personalToDo/update_status', async(req, res)=>{
     try{
-        var list= await PersonalToDo.findOne({uid: "5f094de7c30b346650d86cc0"}).exec()
+        var list= await PersonalToDo.findOne({uid: req.body.uid}).exec()
         // list.tasks.findOne({tid: req.body.tid}).set({status: req.body.status})
         var task= list.tasks.find(obj=> obj._id== req.body.tid)
         task.status= req.body.status
@@ -90,19 +96,36 @@ todo.put('/groupToDo/update_status', async(req, res)=>{
         console.log(err)
     }
 })
-todo.get("/myTodo", (req, res) => {
+todo.put("/myTodo", (req, res) => {
   //console.log("drftyguhijokojihugyf");
-    var list= PersonalToDo.findOne({uid: "5f094de7c30b346650d86cc0"}).then(data => {
+  try{
+    var list= PersonalToDo.findOne({uid: req.body.uid}).then(data => {
       /*data.tasks.forEach(obj => {
         console.log(obj)
-      })*/
+      })*/try{
+      if(data.tasks.length() != 0)
+      {
       var x = data.tasks.filter(obj=> obj.status== "pending")
       console.log(x)
         res.status(200).json({
             tasks: x
         })
+      }
+      else{
+        res.status(200).json({
+            tasks: data
+        })
+      }
+      }catch(err){
+        console.log(err)
+      }
 
-    });
+    })
+
+  }
+  catch(err){
+      console.log(err)
+  }
 });
 
 module.exports= todo

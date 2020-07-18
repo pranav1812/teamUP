@@ -33,14 +33,14 @@ ReactDOM.render(<Provider store={store} >
     <Route path="/findpeople" component={Find} exact/>
     <Route path="/idea" component={Idea} exact/>
     <Route path="/competition" component={Competition} exact/>
-    <Route path="/project" component={Project} exact/>
+    <Route path="/project/:detail" component={Project} exact/>
 
     <Route path="/discussion" component={Discussion_Forum} exact/>
     <Route path="/topic" component={Topic} />
   </Router> </Provider>,
 
-   
-  
+
+
 
   document.getElementById('root')
 );

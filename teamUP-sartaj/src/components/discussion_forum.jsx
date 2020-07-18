@@ -60,8 +60,8 @@ class Discussion_Forum extends Component {
         })
     }
 
-    render() { 
-        return ( 
+    render() {
+        return (
             <div className="discussion_forum">
                 <Navbar />
                 <div className="row discussion_heading">
@@ -94,16 +94,16 @@ class Discussion_Forum extends Component {
                 {
                     this.state.allDis?
                         this.state.allDis.map(obj=>(
-                            
-                            <Discussion_Card des= {obj.brief} title={obj.title} upvotes={obj.upvotes} id={obj._id} msg={obj.discussion[0] ? obj.discussion[1]: {sender:'x', message: '69'}} msgg={obj.discussion[1] ? obj.discussion[1]: {sender:'x', message: '69'}}/>
+
+                            <Discussion_Card des= {obj.brief} title={obj.title} upvotes={obj.upvotes} id={obj._id} msg={obj.discussion[0] ? obj.discussion[0]: {sender:'x', message: '69'}} msgg={obj.discussion[1] ? obj.discussion[1]: {sender:'x', message: '69'}}/>
                             )): null
                 }
-                
-                
+
+
                 <Footer />
             </div>
          );
     }
 }
- 
+
 export default Discussion_Forum;

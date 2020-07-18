@@ -112,6 +112,15 @@ project.post("/findproject", (req, res, next) => {
     });
 });
 
+project.post("/find", (req, res, next) => {
+    Project.findOne({_id: req.body.id}).then(data => {
+        res.status(200).json({
+            project: data
+            //profileImg: data.profileImg
+        });
+    });
+});
+
 
 
 module.exports= project
