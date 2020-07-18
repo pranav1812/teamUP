@@ -37,7 +37,7 @@ class Profile extends Component {
                           </div>
                         </div>
                         <div className="row mt-5">
-                            <div className="col-6 mt-4">
+                            <div className="col-6">
                                 <h6>Mobile No: {this.state.profile.phone}</h6>
                                 <h6>E-Mail: {this.state.profile.mail}</h6>
                                 <h6>Skills: {this.state.profile.skills}

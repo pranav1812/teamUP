@@ -266,6 +266,10 @@ footer i {
     border-radius:5px;
 }
 
+.ongoing {
+    margin-top: 70px;
+} 
+
 .X {
     border-radius: 50%;
     padding: 0px 6px;
@@ -497,6 +501,16 @@ footer i {
     font-weight: bold;
     font-size: 40px;
     padding-bottom: 20px;
+}
+
+.edit_project_btn {
+    color:#17252a;
+    font-size: 30px;
+}
+
+.project_text h6{
+    color:#def2f1;
+    padding-top:10px;
 }
 
 .project_card {
