@@ -21,7 +21,7 @@ class Members extends Component {
             <div>
                 <div className="col-12 mt-2">
                     <div className="row members ml-1 mr-1 align-items-center">
-                        <h6 className="col-9">Member 1</h6>
+                        <h6 className="col-9">Member</h6>
                         <button  onClick={()=>{this.handleModal()}} className="member_button">Rate</button>
                     </div>
                 </div>
