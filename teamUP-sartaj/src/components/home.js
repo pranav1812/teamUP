@@ -117,7 +117,7 @@ class Home extends Component {
     console.log(error);
   })
 
-    /*axios.put('http://localhost:8000/todo/mytodo', {uid: ls.get('uid')})
+    axios.get('http://localhost:8000/todo/mytodo')
     .then(res=>{
       this.setState({
         todolists: res.data.tasks
@@ -125,16 +125,17 @@ class Home extends Component {
       })
       console.log(this.state)
     })
-    .catch(err=>{console.error(err)})*/
+    .catch(err=>{console.error(err)})
   }
   onSubmit(e){
-    // e.preventDefault();
+     e.preventDefault();
     const work = {
       tasks: this.state.todo,
       uid: ls.get('uid')
     }
     axios.put('http://localhost:8000/todo/personalToDo/add', work).then(res => {
       console.log(res);
+      window.location.reload()
     }).catch(err => {
       console.log(err)
     });
@@ -148,6 +149,7 @@ class Home extends Component {
       console.log(err)
     })
     this.forceUpdate();*/
+
 
   }
   onSubmitProject(e)

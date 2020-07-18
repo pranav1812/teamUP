@@ -3,11 +3,11 @@ const {PersonalToDo, GroupToDo}= require('../models')
 
 const todo= express.Router()
 
-todo.post('/personalToDo/create', async(req, res)=>{
+/*todo.post('/personalToDo/create', async(req, res)=>{
   /*  var alreadyPresent= await PersonalToDo.findOne({_id: "5f0cb69f73c1a1a6fc45af89"})
     if (alreadyPresent) return res.send('you already have a todo, edit that instead')
 */
-    try{
+  /*  try{
     console.log(req.body)
         var list= new PersonalToDo({
           uid: req.body.uid,
@@ -23,7 +23,23 @@ todo.post('/personalToDo/create', async(req, res)=>{
         console.log(err)
     }
 
+})*/
+todo.post('/personalToDo/create', async(req, res)=>{
+  /*  var alreadyPresent= await PersonalToDo.findOne({_id: "5f0cb69f73c1a1a6fc45af89"})
+    if (alreadyPresent) return res.send('you already have a todo, edit that instead')
+*/
+    try{
+
+        var list= new PersonalToDo(req.body)
+        var data= await list.save()
+        res.send(`saved your todo list. \n ${data}`)
+   }
+    catch(err){
+        console.log(err)
+    }
+
 })
+
 
 todo.post('/groupToDo/create', async(req, res)=>{
     var alreadyPresent= await GroupToDo.findOne({project_id: req.body.project_id})
@@ -43,7 +59,7 @@ todo.post('/groupToDo/create', async(req, res)=>{
 // there is a security bug: a person can use the user id of someone else to change his todo
 // solution: check if the cookie (storing jwt) confirms his uid as that of req.... but later
 
-todo.put('/personalToDo/add', async(req, res)=>{
+/*todo.put('/personalToDo/add', async(req, res)=>{
     try{
         var list= await PersonalToDo.findOne({uid: req.body.uid}).exec()
         list.tasks.push(req.body.tasks)
@@ -53,7 +69,20 @@ todo.put('/personalToDo/add', async(req, res)=>{
     catch(err){
         console.log(err)
     }
+})*/
+
+todo.put('/personalToDo/add', async(req, res)=>{
+    try{
+        var list= await PersonalToDo.findOne({uid: "5f094de7c30b346650d86cc0"}).exec()
+        list.tasks.push(req.body.tasks)
+        var newList= await list.save()
+        res.send(`updated, your new todo list looks like \n ${newList}`)
+    }
+    catch(err){
+        console.log(err)
+    }
 })
+
 
 todo.put('/groupToDo/add', async(req, res)=>{
     try{
@@ -70,7 +99,7 @@ todo.put('/groupToDo/add', async(req, res)=>{
 
 todo.put('/personalToDo/update_status', async(req, res)=>{
     try{
-        var list= await PersonalToDo.findOne({uid: req.body.uid}).exec()
+        var list= await PersonalToDo.findOne({uid: "5f094de7c30b346650d86cc0"}).exec()
         // list.tasks.findOne({tid: req.body.tid}).set({status: req.body.status})
         var task= list.tasks.find(obj=> obj._id== req.body.tid)
         task.status= req.body.status
@@ -127,5 +156,20 @@ todo.put('/groupToDo/update_status', async(req, res)=>{
       console.log(err)
   }
 });*/
+
+todo.get("/myTodo", (req, res) => {
+
+    var list= PersonalToDo.findOne({uid: "5f094de7c30b346650d86cc0"}).then(data => {
+      /*data.tasks.forEach(obj => {
+        console.log(obj)
+      })*/
+      var x = data.tasks.filter(obj=> obj.status== "pending")
+      console.log(x)
+        res.status(200).json({
+            tasks: x
+        })
+
+    });
+});
 
 module.exports= todo

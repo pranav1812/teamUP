@@ -17,6 +17,7 @@ class TileHomeToDO extends Component {
       }
       axios.put("http://localhost:8000/todo/personalToDo/update_status", status).then(res=>{
         console.log(res.data)
+        window.location.reload()
       }).catch(err=>{
         console.log(err)
       })

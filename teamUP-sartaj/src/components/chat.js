@@ -17,17 +17,17 @@ export default class Chat extends Component {
             .then(() => {
                 const me = new Talk.User({
                     id: "12345231",
-                    name: "sparsh",
+                    name: "project11",
                     email: "sparsh@thapar.edu",
-                    photoUrl: "https://talkjs.com/docs/img/george.jpg",
+                    photoUrl: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.flaticon.com%2Ffree-icon%2Fgroup_166258&psig=AOvVaw0q-PFuqCWBrQ7qeopaCWvg&ust=1595162176646000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCIDq36no1uoCFQAAAAAdAAAAABAD",
                     welcomeMessage: "Hey there! How are you? :-)"
                 });
 
                 const other = new Talk.User({
                     id: "54321",
-                    name: "sartaj",
+                    name: "project11",
                     email: "sartaj@thapar.edu",
-                    photoUrl: "https://talkjs.com/docs/img/ronald.jpg",
+                    photoUrl: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.flaticon.com%2Ffree-icon%2Fgroup_166258&psig=AOvVaw0q-PFuqCWBrQ7qeopaCWvg&ust=1595162176646000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCIDq36no1uoCFQAAAAAdAAAAABAD",
                     welcomeMessage: "Hey there! Love to chat :-)"
                 });
 
