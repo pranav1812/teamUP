@@ -13,7 +13,7 @@ import Find from "./components/findpeople";
 import Idea from "./components/idea";
 import Competition from "./components/competition";
 import Project from "./components/project";
-
+import Chat from "./components/chat";
 
 import { composeWithDevTools } from 'redux-devtools-extension'
 
@@ -34,7 +34,7 @@ ReactDOM.render(<Provider store={store} >
     <Route path="/idea" component={Idea} exact/>
     <Route path="/competition" component={Competition} exact/>
     <Route path="/project/:detail" component={Project} exact/>
-
+    <Route path="/chat" component={Chat} exact/>
     <Route path="/discussion" component={Discussion_Forum} exact/>
     <Route path="/topic" component={Topic} />
   </Router> </Provider>,

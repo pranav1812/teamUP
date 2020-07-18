@@ -54,7 +54,7 @@ class TileFindHome extends Component {
                         <Button type="button" onClick={()=>{this.handleModal(); this.finduser(this.props.people._id);}} className="home_find_button">View Profile</Button>
                         <Modal show={this.state.show} onHide={()=>this.handleModal()}>
                             <Modal.Header  className="modal_header">
-                                <h2>Name</h2>
+                                <h2>{this.props.people.name}</h2>
                                 <span className="close-modal-btn" onClick={this.handleModal}>x</span>
                             </Modal.Header>
                             <Modal.Body  className="modal_body">
@@ -92,7 +92,7 @@ class TileFindHome extends Component {
                                         <h6 className="col-3">E-Mail: </h6>
                                         <p>{this.state.profile.mail}</p>
                                     </div>
-                                    
+
                                 </div>
                             </Modal.Body>
                             <Modal.Footer className="modal_header">

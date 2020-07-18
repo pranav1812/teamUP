@@ -20,7 +20,8 @@
     "reactstrap": "^8.5.1",
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.8",
-    "save-dev": "0.0.1-security"
+    "save-dev": "0.0.1-security",
+    "talkjs": "^0.14.2"
   },
   "scripts": {
     "start": "react-scripts start",

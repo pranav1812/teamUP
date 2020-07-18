@@ -43,7 +43,7 @@ class Project extends Component {
                             <Project_Todo />
                         </div>
                         <div className="col-12 col-md-5 mb-3">
-                            <Project_Chat />
+                            <Project_Chat id={this.state.project._id}/>
                         </div>
                     </div>
                 </div>
