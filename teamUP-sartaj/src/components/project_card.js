@@ -39,7 +39,7 @@ class Project_Card extends Component {
                                         <Members />
                                     </div>
                                 </div>
-                                <h6>Git-Hub Repository: github.com/repository1</h6>
+                                <h6>Git-Hub Repository: <a href="https://github.com/pranav1812/teamUP.git"> view github </a></h6>
                             </div>
                 </div>
 
