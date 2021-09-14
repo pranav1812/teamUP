@@ -43,7 +43,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 app.use('/uploads', express.static('uploads'));
 
-const mongoConnection= "mongodb+srv://testowasp:04@10@2000@cluster0.vfkpf.mongodb.net/testowasp?retryWrites=true&w=majority";
+const mongoConnection= "mongodb+srv://teamUP:teamup@123@cluster0.vwydn.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 mongoose.connect(mongoConnection,{useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true, useFindAndModify: false })
     .then(()=>console.log(`connected to ${mongoConnection}`))
     .catch(err=>console.log(`could not connect to DB ${err}`))

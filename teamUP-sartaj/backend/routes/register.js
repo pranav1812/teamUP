@@ -155,7 +155,7 @@ const userVal= joi.object().keys(
     {
         name: joi.string().required(),
 		username: joi.string().required(),
-		password: joi.string().min(8).required(),
+		password: joi.string().min(4).required(),
         isAdmin: joi.bool().default(false),
         mail: joi.string().regex(/@thapar.edu/),
         phone: joi.string().min(10).max(10).regex(/[6-9][0-9]{9}/),

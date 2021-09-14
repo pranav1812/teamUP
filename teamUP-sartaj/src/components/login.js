@@ -81,19 +81,18 @@ class Login extends Component {
             member: res.data.username
           }
 
-          axios.post('http://localhost:8000/todo//personalToDo/create', personalToDo)
+          axios.post('http://localhost:8000/todo/personalToDo/create', personalToDo)
             .then(res=>{
               console.log(res.data)
             })
-            .catch(err=> console.error(err))
+            .catch(err=> console.log(err))
           console.log(res.data)
         })
-
         .catch(err => {
           console.log(err);
         });
 
-         window.location = '/';
+         //window.location = '/';
     }
 
     onSubmitlogin(e) {
