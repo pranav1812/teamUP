@@ -117,20 +117,22 @@ class Home extends Component {
     console.log(error);
   })
 
-    axios.get('http://localhost:8000/todo/mytodo')
-    .then(res=>{
-      this.setState({
-        todolists: res.data.tasks
+    // axios.put('http://localhost:8000/todo/mytodo',{uid: ls.get('uid')})
+    // .then(res=>{
+    //   this.setState({
+    //     todolists: res.data.tasks
 
-      })
-      console.log(this.state)
-    })
-    .catch(err=>{console.error(err)})
+    //   })
+    //   console.log(this.state)
+    // })
+    // .catch(err=>{console.error(err)})
   }
+
+
   onSubmit(e){
      e.preventDefault();
-    const work = {
-      tasks: this.state.todo,
+    var work = {
+      tasks: this.state.todo.task,
       uid: ls.get('uid')
     }
     axios.put('http://localhost:8000/todo/personalToDo/add', work).then(res => {
@@ -140,18 +142,18 @@ class Home extends Component {
       console.log(err)
     });
 
-    /*axios.get('http://localhost:8000/todo/getpersonaltodo').then(response => {
-      this.setState({
-        todolists: response
-      })
-      console.log(response)
-    }).catch(err => {
-      console.log(err)
-    })
-    this.forceUpdate();*/
-
+    // axios.get('http://localhost:8000/todo/getpersonaltodo').then(response => {
+    //   this.setState({
+    //     todolists: response
+    //   })
+    //   console.log(response)
+    // }).catch(err => {
+    //   console.log(err)
+    // })
+    this.forceUpdate();
 
   }
+
   onSubmitProject(e)
   {
     e.preventDefault();
@@ -181,7 +183,7 @@ class Home extends Component {
       console.log(err)
     });
 
-    /*const update ={
+    const update ={
       projectid: this.state.projectid,
       userid: ls.get('uid'),
       name: ls.get('username'),
@@ -193,10 +195,10 @@ class Home extends Component {
       console.log(res)
     }).catch(err => {
       console.log(err)
-    })*/
-
+    })
 
   }
+  
   addmember(){
     const update ={
       projectid: this.state.projectid,
